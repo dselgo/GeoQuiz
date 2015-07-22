@@ -17,7 +17,7 @@ struct Answer{
 class Question {
     var question: String
     var answers: [Answer] = [Answer(), Answer(), Answer(), Answer()]
-    var image: PFFile = nil
+    var image: PFFile! = nil
     
     init(question: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int){
         self.question = question
