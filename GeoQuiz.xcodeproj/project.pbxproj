@@ -144,7 +144,6 @@
 		3351A4071B5EB1400054E71F /* GeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				AA236E861B5FE2C3004DF047 /* Frameworks */,
 				AA236E7A1B5FE278004DF047 /* QuizHandler.swift */,
 				3351A40A1B5EB1410054E71F /* AppDelegate.swift */,
 				3351A40C1B5EB1410054E71F /* ViewController.swift */,
@@ -152,6 +151,7 @@
 				3351A40E1B5EB1410054E71F /* Main.storyboard */,
 				3351A4111B5EB1410054E71F /* Images.xcassets */,
 				3351A4131B5EB1410054E71F /* LaunchScreen.xib */,
+				AA236E861B5FE2C3004DF047 /* Frameworks */,
 				3351A4081B5EB1400054E71F /* Supporting Files */,
 			);
 			path = GeoQuiz;
