@@ -13,8 +13,9 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answer2Button: UIButton!
     @IBOutlet weak var answer3Button: UIButton!
     @IBOutlet weak var answer4Button: UIButton!
-    @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var questionText: UITextView!
+    @IBOutlet weak var timerLabel: UILabel!
 
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
@@ -60,8 +61,9 @@ class QuestionViewController: UIViewController {
     
     func runQuiz(){
         if (location != ""){
-            let quiz = QuizHandler(location: location ,startQuestionID: 1)
+            let quiz = QuizHandler(location: location, startQuestionID: 1)
             while(!gameOver){
+                nextButton.enabled = false
                 question = quiz.getNextQuestion()!
                 questionNumber = quiz.questionNumber
                 questionText.text = question.text
@@ -85,7 +87,7 @@ class QuestionViewController: UIViewController {
     
     func updateTimer(){
         counter -= decrementTime
-        //add code to update label here
+        timerLabel.text = String(stringInterpolationSegment: counter)
         if(counter <= 0){
             stopTimer()
         }
@@ -103,6 +105,7 @@ class QuestionViewController: UIViewController {
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
         }
+        nextButton.enabled = true
     }
     
     //stops the timer and checks if the button pressed was correct
@@ -129,5 +132,10 @@ class QuestionViewController: UIViewController {
                 sender.backgroundColor = UIColor.redColor()
             }
         }
+        nextButton.enabled = true
+    }
+    
+    @IBAction func nextQuestion(sender: AnyObject) {
+        roundOver = true
     }
 }

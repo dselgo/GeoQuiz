@@ -157,10 +157,10 @@
 		3351A4071B5EB1400054E71F /* GeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				AAA021E41B6023D50080D4FD /* QuestionViewController.swift */,
 				A80672FD1B6014C1004A92ED /* Question.swift */,
-				AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */,
 				AA236E7A1B5FE278004DF047 /* QuizHandler.swift */,
+				AAA021E41B6023D50080D4FD /* QuestionViewController.swift */,
+				AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */,
 				AA02A25B1B602759004766B2 /* GeoLocation.swift */,
 				3351A40A1B5EB1410054E71F /* AppDelegate.swift */,
 				3351A40C1B5EB1410054E71F /* ViewController.swift */,
