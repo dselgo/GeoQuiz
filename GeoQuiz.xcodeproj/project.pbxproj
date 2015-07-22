@@ -31,6 +31,8 @@
 		AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */; };
 		AAA021E51B6023D50080D4FD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E41B6023D50080D4FD /* QuestionViewController.swift */; };
 		AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */; };
+		AAA021ED1B60461A0080D4FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021EC1B60461A0080D4FD /* ResultViewController.swift */; };
+		AAA021EF1B6048830080D4FD /* XYPieChart in Resources */ = {isa = PBXBuildFile; fileRef = AAA021EE1B6048830080D4FD /* XYPieChart */; };
 		AAF0185D1B5FEA82006841A7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185C1B5FEA82006841A7 /* Social.framework */; };
 		AAF0185F1B5FEA88006841A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185E1B5FEA88006841A7 /* StoreKit.framework */; };
 		AAF018611B5FEA8E006841A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF018601B5FEA8E006841A7 /* Security.framework */; };
@@ -83,6 +85,8 @@
 		AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		AAA021E41B6023D50080D4FD /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = ../QuestionViewController.swift; sourceTree = "<group>"; };
 		AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguagesTableViewController.swift; path = ../LanguagesTableViewController.swift; sourceTree = "<group>"; };
+		AAA021EC1B60461A0080D4FD /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		AAA021EE1B6048830080D4FD /* XYPieChart */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XYPieChart; sourceTree = "<group>"; };
 		AAF0185C1B5FEA82006841A7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AAF0185E1B5FEA88006841A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AAF018601B5FEA8E006841A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -166,10 +170,12 @@
 				3351A40C1B5EB1410054E71F /* ViewController.swift */,
 				338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */,
 				3351A40E1B5EB1410054E71F /* Main.storyboard */,
+				AAA021EC1B60461A0080D4FD /* ResultViewController.swift */,
 				AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */,
 				AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */,
 				3351A4111B5EB1410054E71F /* Images.xcassets */,
 				3351A4131B5EB1410054E71F /* LaunchScreen.xib */,
+				AAA021EE1B6048830080D4FD /* XYPieChart */,
 				AA236E861B5FE2C3004DF047 /* Frameworks */,
 				3351A4081B5EB1400054E71F /* Supporting Files */,
 				AAF018721B5FEBC0006841A7 /* GeoQuiz-Bridging-Header.h */,
@@ -313,6 +319,7 @@
 				3351A4101B5EB1410054E71F /* Main.storyboard in Resources */,
 				3351A4151B5EB1410054E71F /* LaunchScreen.xib in Resources */,
 				3351A4121B5EB1410054E71F /* Images.xcassets in Resources */,
+				AAA021EF1B6048830080D4FD /* XYPieChart in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +347,7 @@
 				3351A40B1B5EB1410054E71F /* AppDelegate.swift in Sources */,
 				AAA021E51B6023D50080D4FD /* QuestionViewController.swift in Sources */,
 				AA236E7B1B5FE278004DF047 /* QuizHandler.swift in Sources */,
+				AAA021ED1B60461A0080D4FD /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
