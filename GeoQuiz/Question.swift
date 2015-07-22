@@ -10,14 +10,14 @@ import Foundation
 import Parse
 
 struct Answer{
-    var text: String
+    var text: String = ""
     var isCorrect: Bool = false
 }
 
 class Question {
     var question: String
-    var answers: [Answer](count: 4)
-    var image: PFFile
+    var answers: [Answer] = [Answer(), Answer(), Answer(), Answer()]
+    var image: PFFile = nil
     
     init(question: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int){
         self.question = question
@@ -26,14 +26,16 @@ class Question {
         answers[2].text = answer3
         answers[3].text = answer4
         switch correctAnswer {
-            case 1:
-                answers[0].isCorrect = true
-            case 2:
-                answers[1].isCorrect = true
-            case 3:
-                answers[2].isCorrect = true
-            case 4:
-                answers[3].isCorrect = true
+        case 1:
+            answers[0].isCorrect = true
+        case 2:
+            answers[1].isCorrect = true
+        case 3:
+            answers[2].isCorrect = true
+        case 4:
+            answers[3].isCorrect = true
+        default:
+            break
         }
     }
     
