@@ -14,6 +14,7 @@
 		3351A4151B5EB1410054E71F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3351A4131B5EB1410054E71F /* LaunchScreen.xib */; };
 		3351A4211B5EB1410054E71F /* GeoQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351A4201B5EB1410054E71F /* GeoQuizTests.swift */; };
 		338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */; };
+		A80672FE1B6014C1004A92ED /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80672FD1B6014C1004A92ED /* Question.swift */; };
 		AA236E7B1B5FE278004DF047 /* QuizHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA236E7A1B5FE278004DF047 /* QuizHandler.swift */; };
 		AA236E811B5FE2B7004DF047 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E7C1B5FE2B7004DF047 /* Bolts.framework */; };
 		AA236E821B5FE2B7004DF047 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E7D1B5FE2B7004DF047 /* Parse.framework */; };
@@ -62,6 +63,7 @@
 		3351A41F1B5EB1410054E71F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3351A4201B5EB1410054E71F /* GeoQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizTests.swift; sourceTree = "<group>"; };
 		338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeTableViewController.swift; sourceTree = "<group>"; };
+		A80672FD1B6014C1004A92ED /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		AA236E7A1B5FE278004DF047 /* QuizHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHandler.swift; sourceTree = "<group>"; };
 		AA236E7C1B5FE2B7004DF047 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		AA236E7D1B5FE2B7004DF047 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
@@ -149,7 +151,7 @@
 		3351A4071B5EB1400054E71F /* GeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
-				AA236E861B5FE2C3004DF047 /* Frameworks */,
+				A80672FD1B6014C1004A92ED /* Question.swift */,
 				AA236E7A1B5FE278004DF047 /* QuizHandler.swift */,
 				3351A40A1B5EB1410054E71F /* AppDelegate.swift */,
 				3351A40C1B5EB1410054E71F /* ViewController.swift */,
@@ -159,6 +161,7 @@
 				AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */,
 				3351A4111B5EB1410054E71F /* Images.xcassets */,
 				3351A4131B5EB1410054E71F /* LaunchScreen.xib */,
+				AA236E861B5FE2C3004DF047 /* Frameworks */,
 				3351A4081B5EB1400054E71F /* Supporting Files */,
 				AAF018721B5FEBC0006841A7 /* GeoQuiz-Bridging-Header.h */,
 			);
@@ -322,6 +325,7 @@
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
 				AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */,
 				3351A40D1B5EB1410054E71F /* ViewController.swift in Sources */,
+				A80672FE1B6014C1004A92ED /* Question.swift in Sources */,
 				3351A40B1B5EB1410054E71F /* AppDelegate.swift in Sources */,
 				AA236E7B1B5FE278004DF047 /* QuizHandler.swift in Sources */,
 			);

@@ -13,7 +13,7 @@ struct QuizQuestion {
     var text: String
     var answers: (answer1: String, answer2: String, answer3: String, answer4: String)
     var correctAnswer: Int
-    var image: PFFile
+    var image: PFFile?
 }
 
 class QuizHandler{
@@ -38,8 +38,8 @@ class QuizHandler{
         
         if nextQuestionAvailable() {
             question = loadQuestion(questionId)
-            if question != nil {
-                loadQuestionImage(question!.image, imageHandler: imageHandler)
+            if question?.image != nil {
+                loadQuestionImage(question!.image!, imageHandler: imageHandler)
             }
         }
         ++questionId
@@ -70,7 +70,7 @@ class QuizHandler{
         
         if (pfQuestion != nil){
             var text: String = pfQuestion!["question"] as! String
-            var image: PFFile = pfQuestion!["image"] as! PFFile
+            var image: PFFile? = pfQuestion!["image"] as? PFFile
             var answer1: String = pfQuestion!["answer1"] as! String
             var answer2: String = pfQuestion!["answer2"] as! String
             var answer3: String = pfQuestion!["answer3"] as! String
