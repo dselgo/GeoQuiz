@@ -24,7 +24,7 @@
         <!--View Controller-->
         <scene sceneID="egY-vH-KUV">
             <objects>
-                <viewController id="4Qv-1g-ywr" sceneMemberID="viewController">
+                <viewController id="4Qv-1g-ywr" customClass="ViewController" customModule="GeoQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fdu-NE-h1J"/>
                         <viewControllerLayoutGuide type="bottom" id="S41-PB-T9i"/>
