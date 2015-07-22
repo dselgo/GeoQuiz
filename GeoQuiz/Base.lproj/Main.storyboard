@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="33w-7k-0ja" kind="show" id="phd-dX-a4D"/>
+                                    <segue destination="33w-7k-0ja" kind="show" identifier="showBadges" id="phd-dX-a4D"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-aV-IXj">
@@ -48,7 +48,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="L9a-cn-OGw" kind="show" id="94w-gi-AnC"/>
+                                    <segue destination="L9a-cn-OGw" kind="show" identifier="playQuiz" id="94w-gi-AnC"/>
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" placeholder="Search City" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-hJ-J8Q">
@@ -74,7 +74,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="G7R-7t-pyq" kind="show" id="ZLI-Aa-ClM"/>
+                                    <segue destination="G7R-7t-pyq" kind="show" identifier="showOptions" id="ZLI-Aa-ClM"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -261,7 +261,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <segue destination="O80-d3-fXZ" kind="show" id="Hyr-yE-QeD"/>
+                                <segue destination="O80-d3-fXZ" kind="show" identifier="userLogout" id="Hyr-yE-QeD"/>
                             </connections>
                         </button>
                         <sections>
@@ -281,7 +281,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="DGY-AK-cPI" kind="show" id="EzS-ty-yEC"/>
+                                            <segue destination="DGY-AK-cPI" kind="show" identifier="showLanguages" id="EzS-ty-yEC"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OptionsCell" id="2mF-ld-6Ao">
@@ -289,15 +289,15 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2mF-ld-6Ao" id="H0D-cd-UPx">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cY6-48-s3M">
+                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sound" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8q0-7U-I2X">
                                                     <rect key="frame" x="8" y="11" width="51" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cY6-48-s3M">
-                                                    <rect key="frame" x="543" y="6" width="51" height="31"/>
-                                                </switch>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cY6-48-s3M" firstAttribute="trailing" secondItem="H0D-cd-UPx" secondAttribute="trailingMargin" id="MAn-m9-zeX"/>
@@ -393,7 +393,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="txH-3Z-YmK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2495" y="1246"/>
+            <point key="canvasLocation" x="2505" y="1254"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="GFh-l1-bJH">
