@@ -25,6 +25,7 @@
 		AA236E8C1B5FE2EC004DF047 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8B1B5FE2EC004DF047 /* libz.dylib */; };
 		AA236E8E1B5FE2F2004DF047 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8D1B5FE2F2004DF047 /* libsqlite3.dylib */; };
 		AA236E901B5FE300004DF047 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */; };
+		AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */; };
 		AAF0185D1B5FEA82006841A7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185C1B5FEA82006841A7 /* Social.framework */; };
 		AAF0185F1B5FEA88006841A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185E1B5FEA88006841A7 /* StoreKit.framework */; };
 		AAF018611B5FEA8E006841A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF018601B5FEA8E006841A7 /* Security.framework */; };
@@ -71,6 +72,7 @@
 		AA236E8B1B5FE2EC004DF047 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AA236E8D1B5FE2F2004DF047 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		AAF0185C1B5FEA82006841A7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AAF0185E1B5FEA88006841A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AAF018601B5FEA8E006841A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -151,6 +153,7 @@
 				3351A40C1B5EB1410054E71F /* ViewController.swift */,
 				338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */,
 				3351A40E1B5EB1410054E71F /* Main.storyboard */,
+				AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */,
 				3351A4111B5EB1410054E71F /* Images.xcassets */,
 				3351A4131B5EB1410054E71F /* LaunchScreen.xib */,
 				3351A4081B5EB1400054E71F /* Supporting Files */,
@@ -312,6 +315,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */,
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
 				3351A40D1B5EB1410054E71F /* ViewController.swift in Sources */,
 				3351A40B1B5EB1410054E71F /* AppDelegate.swift in Sources */,
