@@ -28,6 +28,8 @@
 		AA236E901B5FE300004DF047 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */; };
 		AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */; };
 		AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */; };
+		AAA021E51B6023D50080D4FD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E41B6023D50080D4FD /* QuestionViewController.swift */; };
+		AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */; };
 		AAF0185D1B5FEA82006841A7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185C1B5FEA82006841A7 /* Social.framework */; };
 		AAF0185F1B5FEA88006841A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185E1B5FEA88006841A7 /* StoreKit.framework */; };
 		AAF018611B5FEA8E006841A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF018601B5FEA8E006841A7 /* Security.framework */; };
@@ -77,6 +79,8 @@
 		AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
+		AAA021E41B6023D50080D4FD /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = ../QuestionViewController.swift; sourceTree = "<group>"; };
+		AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguagesTableViewController.swift; path = ../LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		AAF0185C1B5FEA82006841A7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AAF0185E1B5FEA88006841A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AAF018601B5FEA8E006841A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -151,7 +155,9 @@
 		3351A4071B5EB1400054E71F /* GeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				AAA021E41B6023D50080D4FD /* QuestionViewController.swift */,
 				A80672FD1B6014C1004A92ED /* Question.swift */,
+				AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */,
 				AA236E7A1B5FE278004DF047 /* QuizHandler.swift */,
 				3351A40A1B5EB1410054E71F /* AppDelegate.swift */,
 				3351A40C1B5EB1410054E71F /* ViewController.swift */,
@@ -322,11 +328,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */,
+				AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */,
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
 				AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */,
 				3351A40D1B5EB1410054E71F /* ViewController.swift in Sources */,
 				A80672FE1B6014C1004A92ED /* Question.swift in Sources */,
 				3351A40B1B5EB1410054E71F /* AppDelegate.swift in Sources */,
+				AAA021E51B6023D50080D4FD /* QuestionViewController.swift in Sources */,
 				AA236E7B1B5FE278004DF047 /* QuizHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
