@@ -17,6 +17,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     @IBOutlet weak var badgesButton: UIButton!
     @IBOutlet weak var citySearchBar: UISearchBar!
     
+    let geoLocation: GeoLocation = GeoLocation()
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
     
@@ -43,6 +44,19 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     }
     
     @IBAction func locationButtonPressed(sender: UIButton) {
+        var geoLocation: GeoLocation = GeoLocation()
+        let currentLocation: PFGeoPoint? = geoLocation.getLocation()
+        
+        if currentLocation != nil {
+            var query: PFQuery = PFQuery(className: "Cities")
+            
+            query.whereKey("location", nearGeoPoint: currentLocation!)
+            
+            var cityObject: PFObject? = query.findObjects()?.first as? PFObject
+            citySearchBar.text = cityObject!["name"] as! String
+        } else {
+            var alert: UIAlertView = UIAlertView(title: "Location error", message: "Could not detect your current position. Pleasy try again.", delegate: self, cancelButtonTitle: "OK")
+        }
     }
     /*
     * Initializes the start screen. If the user has no session open, the login screen will apper

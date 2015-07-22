@@ -8,18 +8,37 @@
 
 import Foundation
 import CoreLocation
-
+import Parse
 
 class GeoLocation {
-    private static func getLocation() -> CLLocation? {
-        var locatioManager: CLLocationManager = CLLocationManager()
-        locatioManager.desiredAccuracy = kCLLocationAccuracyBest
-        locatioManager.requestAlwaysAuthorization()
-        locatioManager.startUpdatingLocation()
-        return locatioManager.location
+    var locatioManager: CLLocationManager?
+    
+    init(){
+        self.initLocationManager()
     }
     
-    static func getLocation(locationHandler: (String?) -> Void) {
+    private func initLocationManager(){
+        locatioManager = CLLocationManager()
+        locatioManager!.desiredAccuracy = kCLLocationAccuracyBest
+        locatioManager!.requestWhenInUseAuthorization()
+        locatioManager!.startUpdatingLocation()
+    }
+    
+    func getLocation() -> CLLocation? {
+        initLocationManager()
+        return locatioManager!.location
+    }
+    
+    func getLocation() -> PFGeoPoint? {
+        var location: CLLocation? = getLocation()
+        if location == nil {
+            return nil
+        } else {
+            return PFGeoPoint(latitude: location!.coordinate.latitude, longitude: location!.coordinate.longitude)
+        }
+    }
+    
+    func getLocation(locationHandler: (String?) -> Void) {
         var location: CLLocation? = getLocation()
         
         println(location?.coordinate.latitude)
@@ -30,7 +49,7 @@ class GeoLocation {
                 locationHandler(nil)
                 println("Reverse geocoder failed with error" + error.localizedDescription)
             } else {
-            
+                
                 if placemarks.count > 0 {
                     let pm: CLPlacemark = placemarks[0] as! CLPlacemark
                     locationHandler(pm.locality)
