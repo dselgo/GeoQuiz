@@ -11,11 +11,11 @@ build/
 !default.perspectivev3
 *.xcworkspace
 !default.xcworkspace
-xcuserdata
+xcuserdata/
 profile
 *.moved-aside
 DerivedData
 .idea/
 # Pods - for those of you who use CocoaPods
 Pods
-GeoQuiz.xcodeproj/*
+GeoQuiz.xcodeproj/

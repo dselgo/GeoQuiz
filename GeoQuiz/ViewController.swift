@@ -12,10 +12,25 @@ import ParseUI
 
 class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate {
 
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var optionsButton: UIButton!
+    @IBOutlet weak var badgesButton: UIButton!
+    @IBOutlet weak var citySearchBar: UISearchBar!
+    
+    let borderSize : CGFloat = 0.7
+    let cornerRadius : CGFloat = 5.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
+        playButton.layer.borderWidth = 1.0
+        playButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        playButton.layer.cornerRadius = cornerRadius
+        optionsButton.layer.borderWidth = 1.0
+        optionsButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        optionsButton.layer.cornerRadius = cornerRadius
+        badgesButton.layer.borderWidth = 1.0
+        badgesButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        badgesButton.layer.cornerRadius = cornerRadius}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,6 +42,8 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         initializeStartScreen()
     }
     
+    @IBAction func locationButtonPressed(sender: UIButton) {
+    }
     /*
     * Initializes the start screen. If the user has no session open, the login screen will apper
     * Otherwise, GeoQuiz's start screen will be presented
