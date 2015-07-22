@@ -14,6 +14,17 @@
 		3351A4151B5EB1410054E71F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3351A4131B5EB1410054E71F /* LaunchScreen.xib */; };
 		3351A4211B5EB1410054E71F /* GeoQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351A4201B5EB1410054E71F /* GeoQuizTests.swift */; };
 		338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */; };
+		AA236E7B1B5FE278004DF047 /* QuizHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA236E7A1B5FE278004DF047 /* QuizHandler.swift */; };
+		AA236E811B5FE2B7004DF047 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E7C1B5FE2B7004DF047 /* Bolts.framework */; };
+		AA236E821B5FE2B7004DF047 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E7D1B5FE2B7004DF047 /* Parse.framework */; };
+		AA236E831B5FE2B7004DF047 /* ParseFacebookUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E7E1B5FE2B7004DF047 /* ParseFacebookUtils.framework */; };
+		AA236E841B5FE2B7004DF047 /* ParseFacebookUtilsV4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E7F1B5FE2B7004DF047 /* ParseFacebookUtilsV4.framework */; };
+		AA236E851B5FE2B7004DF047 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E801B5FE2B7004DF047 /* ParseUI.framework */; };
+		AA236E881B5FE2D1004DF047 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E871B5FE2D1004DF047 /* QuartzCore.framework */; };
+		AA236E8A1B5FE2E1004DF047 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E891B5FE2E1004DF047 /* SystemConfiguration.framework */; };
+		AA236E8C1B5FE2EC004DF047 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8B1B5FE2EC004DF047 /* libz.dylib */; };
+		AA236E8E1B5FE2F2004DF047 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8D1B5FE2F2004DF047 /* libsqlite3.dylib */; };
+		AA236E901B5FE300004DF047 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +49,17 @@
 		3351A41F1B5EB1410054E71F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3351A4201B5EB1410054E71F /* GeoQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizTests.swift; sourceTree = "<group>"; };
 		338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeTableViewController.swift; sourceTree = "<group>"; };
+		AA236E7A1B5FE278004DF047 /* QuizHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHandler.swift; sourceTree = "<group>"; };
+		AA236E7C1B5FE2B7004DF047 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		AA236E7D1B5FE2B7004DF047 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		AA236E7E1B5FE2B7004DF047 /* ParseFacebookUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtils.framework; sourceTree = "<group>"; };
+		AA236E7F1B5FE2B7004DF047 /* ParseFacebookUtilsV4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseFacebookUtilsV4.framework; sourceTree = "<group>"; };
+		AA236E801B5FE2B7004DF047 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		AA236E871B5FE2D1004DF047 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		AA236E891B5FE2E1004DF047 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		AA236E8B1B5FE2EC004DF047 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		AA236E8D1B5FE2F2004DF047 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +67,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA236E901B5FE300004DF047 /* AudioToolbox.framework in Frameworks */,
+				AA236E8E1B5FE2F2004DF047 /* libsqlite3.dylib in Frameworks */,
+				AA236E8C1B5FE2EC004DF047 /* libz.dylib in Frameworks */,
+				AA236E8A1B5FE2E1004DF047 /* SystemConfiguration.framework in Frameworks */,
+				AA236E881B5FE2D1004DF047 /* QuartzCore.framework in Frameworks */,
+				AA236E821B5FE2B7004DF047 /* Parse.framework in Frameworks */,
+				AA236E811B5FE2B7004DF047 /* Bolts.framework in Frameworks */,
+				AA236E851B5FE2B7004DF047 /* ParseUI.framework in Frameworks */,
+				AA236E841B5FE2B7004DF047 /* ParseFacebookUtilsV4.framework in Frameworks */,
+				AA236E831B5FE2B7004DF047 /* ParseFacebookUtils.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +111,8 @@
 		3351A4071B5EB1400054E71F /* GeoQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				AA236E861B5FE2C3004DF047 /* Frameworks */,
+				AA236E7A1B5FE278004DF047 /* QuizHandler.swift */,
 				3351A40A1B5EB1410054E71F /* AppDelegate.swift */,
 				3351A40C1B5EB1410054E71F /* ViewController.swift */,
 				338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */,
@@ -113,6 +147,23 @@
 				3351A41F1B5EB1410054E71F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AA236E861B5FE2C3004DF047 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */,
+				AA236E8D1B5FE2F2004DF047 /* libsqlite3.dylib */,
+				AA236E8B1B5FE2EC004DF047 /* libz.dylib */,
+				AA236E891B5FE2E1004DF047 /* SystemConfiguration.framework */,
+				AA236E871B5FE2D1004DF047 /* QuartzCore.framework */,
+				AA236E7C1B5FE2B7004DF047 /* Bolts.framework */,
+				AA236E7D1B5FE2B7004DF047 /* Parse.framework */,
+				AA236E7E1B5FE2B7004DF047 /* ParseFacebookUtils.framework */,
+				AA236E7F1B5FE2B7004DF047 /* ParseFacebookUtilsV4.framework */,
+				AA236E801B5FE2B7004DF047 /* ParseUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +269,7 @@
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
 				3351A40D1B5EB1410054E71F /* ViewController.swift in Sources */,
 				3351A40B1B5EB1410054E71F /* AppDelegate.swift in Sources */,
+				AA236E7B1B5FE278004DF047 /* QuizHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +396,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GeoQuiz",
+				);
 				INFOPLIST_FILE = GeoQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,6 +410,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/GeoQuiz",
+				);
 				INFOPLIST_FILE = GeoQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
