@@ -13,6 +13,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answer2Button: UIButton!
     @IBOutlet weak var answer3Button: UIButton!
     @IBOutlet weak var answer4Button: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
@@ -31,6 +32,9 @@ class QuestionViewController: UIViewController {
         answer4Button.layer.borderWidth = 1.0
         answer4Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer4Button.layer.cornerRadius = cornerRadius
+        nextButton.layer.borderWidth = 1.0
+        nextButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        nextButton.layer.cornerRadius = cornerRadius
     }
 
     override func didReceiveMemoryWarning() {

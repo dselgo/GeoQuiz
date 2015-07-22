@@ -15,6 +15,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     @IBOutlet weak var playButton: UIButton!
     @IBOutlet weak var optionsButton: UIButton!
     @IBOutlet weak var badgesButton: UIButton!
+    @IBOutlet weak var citySearchBar: UISearchBar!
     
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
