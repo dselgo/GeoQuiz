@@ -11,7 +11,7 @@ import CoreLocation
 
 
 class GeoLocation {
-    private func getLocation() -> CLLocation? {
+    private static func getLocation() -> CLLocation? {
         var locatioManager: CLLocationManager = CLLocationManager()
         locatioManager.desiredAccuracy = kCLLocationAccuracyBest
         locatioManager.requestAlwaysAuthorization()
@@ -19,7 +19,7 @@ class GeoLocation {
         return locatioManager.location
     }
     
-    func getLocation(locationHandler: (String?) -> Void) {
+    static func getLocation(locationHandler: (String?) -> Void) {
         var location: CLLocation? = getLocation()
         
         println(location?.coordinate.latitude)
