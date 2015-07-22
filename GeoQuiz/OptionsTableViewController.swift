@@ -40,8 +40,8 @@ class OptionsTableViewController: UITableViewController {
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OptionsCell", forIndexPath: indexPath) as! UITableViewCell
+    /*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("OptionsCell") as! UITableViewCell
 
         if cell.textLabel!.text != "Language" {
             var enabledSwitch = UISwitch(frame: CGRectZero) as UISwitch
@@ -51,7 +51,29 @@ class OptionsTableViewController: UITableViewController {
         
 
         return cell
+    }*/
+    
+    /*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+    let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier(kCellIdentifier) as UITableViewCell
+    let admin = self.admin[indexPath.row]
+    
+    let text1a = admin.FirstName
+    let text1aa = " "
+    
+    let text1b = admin.LastName
+    let text1 = text1a + text1aa + text1b
+    (cell.contentView.viewWithTag(1) as UILabel).text = text1
+    
+    if admin.admin == "yes" {
+    (cell.contentView.viewWithTag(2) as UISwitch).setOn(true, animated:true)
+    
+    } else if admin.admin == "no" {
+    (cell.contentView.viewWithTag(2) as UISwitch).setOn(false, animated:true)
     }
+    
+    return cell
+    }*/
     
 
     /*
