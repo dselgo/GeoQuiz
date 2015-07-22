@@ -198,6 +198,7 @@
                         <outlet property="answer2Button" destination="Ohx-vr-Bn2" id="A9f-yC-fQl"/>
                         <outlet property="answer3Button" destination="fWW-cM-G1C" id="gtc-XB-jKn"/>
                         <outlet property="answer4Button" destination="KKe-2g-RLy" id="HXd-q7-I7g"/>
+                        <outlet property="questionText" destination="IwB-LX-lLK" id="Ujv-ZY-sad"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evx-LA-bnv" userLabel="First Responder" sceneMemberID="firstResponder"/>

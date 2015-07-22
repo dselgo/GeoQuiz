@@ -9,12 +9,12 @@
 import Foundation
 import Parse
 
-struct QuizQuestion {
+/*struct QuizQuestion {
     var text: String
     var answers: (answer1: String, answer2: String, answer3: String, answer4: String)
     var correctAnswer: Int
     var image: PFFile?
-}
+}*/
 
 class QuizHandler{
     var location: String
@@ -22,9 +22,9 @@ class QuizHandler{
     var questionNumber: Int
     var questionId: Int64
     
-    init(location: String, numberOfQuestions: Int, startQuestionID: Int64){
+    init(location: String, startQuestionID: Int64){
         self.location = location
-        self.numberOfQuestions = numberOfQuestions
+        self.numberOfQuestions = 10
         self.questionId = startQuestionID
         self.questionNumber = 1
     }
@@ -33,8 +33,8 @@ class QuizHandler{
         return questionNumber <= numberOfQuestions
     }
     
-    func getNextQuestion(imageHandler: (image: UIImage) -> Void) -> QuizQuestion?{
-        var question: QuizQuestion?
+    func getNextQuestion(imageHandler: (image: UIImage) -> Void) -> Question?{
+        var question: Question?
         
         if nextQuestionAvailable() {
             question = loadQuestion(questionId)
@@ -43,11 +43,24 @@ class QuizHandler{
             }
         }
         ++questionId
+        ++questionNumber
         
         return question
     }
     
-    private func loadQuestion(id: Int64) -> QuizQuestion? {
+    func getNextQuestion() -> Question?{
+        var question: Question?
+        
+        if nextQuestionAvailable() {
+            question = loadQuestion(questionId)
+        }
+        ++questionId
+        ++questionNumber
+        
+        return question
+    }
+    
+    private func loadQuestion(id: Int64) -> Question? {
         var query: PFQuery = PFQuery(className: self.location)
         var pfQuestion: PFObject?
         
@@ -57,16 +70,8 @@ class QuizHandler{
         return self.parseQuestion(pfQuestion)
     }
     
-    private func loadQuestionImage(imageFile: PFFile, imageHandler: (image: UIImage) -> Void) {
-        imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
-            if error == nil {
-                imageHandler(image: UIImage(data:imageData!)!)
-            }
-        })
-    }
-    
-    func parseQuestion(pfQuestion: PFObject?) -> QuizQuestion? {
-        var question: QuizQuestion?
+    func parseQuestion(pfQuestion: PFObject?) -> Question? {
+        var question: Question?
         
         if (pfQuestion != nil){
             var text: String = pfQuestion!["question"] as! String
@@ -76,9 +81,22 @@ class QuizHandler{
             var answer3: String = pfQuestion!["answer3"] as! String
             var answer4: String = pfQuestion!["answer4"] as! String
             var correctAnswer: Int = pfQuestion!["correctAnswer"] as! Int
-            question = QuizQuestion(text: text, answers: (answer1, answer2, answer3, answer4), correctAnswer: correctAnswer, image: image)
+            
+            if(image != nil){
+                question = Question(text: text, answer1: answer1, answer2: answer2, answer3: answer3, answer4: answer4, correctAnswer: correctAnswer, image: image!)
+            } else {
+                question = Question(text: text, answer1: answer1, answer2: answer2, answer3: answer3, answer4: answer4, correctAnswer: correctAnswer)
+            }
         }
         
         return question
+    }
+    
+    private func loadQuestionImage(imageFile: PFFile, imageHandler: (image: UIImage) -> Void) {
+        imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                imageHandler(image: UIImage(data:imageData!)!)
+            }
+        })
     }
 }

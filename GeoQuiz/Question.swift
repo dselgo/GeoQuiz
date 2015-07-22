@@ -15,15 +15,12 @@ struct Answer{
 }
 
 class Question {
-    var question: String
+    var text: String
     var answers: [Answer] = [Answer(), Answer(), Answer(), Answer()]
     var image: PFFile! = nil
-    var timer = NSTimer()
-    var counter: Double = 10.0
-    var decrementTime: Double = 0.1
     
-    init(question: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int){
-        self.question = question
+    init(text: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int){
+        self.text = text
         answers[0].text = answer1
         answers[1].text = answer2
         answers[2].text = answer3
@@ -43,30 +40,9 @@ class Question {
         answers.shuffle()
     }
     
-    convenience init(question: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int, image: PFFile){
-        self.init(question: question, answer1: answer1, answer2: answer2, answer3: answer3, answer4: answer4, correctAnswer: correctAnswer)
+    convenience init(text: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int, image: PFFile){
+        self.init(text: question, answer1: answer1, answer2: answer2, answer3: answer3, answer4: answer4, correctAnswer: correctAnswer)
         self.image = image
-    }
-    
-    func checkAnswer(guess: Int) -> Bool{
-        return answers[guess - 1].isCorrect
-    }
-    
-    func startTimer(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(decrementTime, target:self, selector: Selector("updateTimer"), userInfo: nil, repeats: false)
-    }
-    
-    func updateTimer(){
-        counter -= decrementTime
-        //add code to update label here
-        if(counter <= 0){
-            stopTimer()
-            //add code to stop quiz
-        }
-    }
-    
-    func stopTimer(){
-        timer.invalidate()
     }
 }
 
