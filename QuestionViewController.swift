@@ -288,6 +288,7 @@ class QuestionViewController: UIViewController {
             target.location = location
             target.questionId = questionNumber - 1
         }
+
         if segue.identifier == "showResults"{
             /*
             var yourNextViewController = (segue.destinationViewController as! ResultViewController)

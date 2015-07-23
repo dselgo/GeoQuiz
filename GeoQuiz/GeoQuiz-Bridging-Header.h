@@ -3,5 +3,6 @@
 //
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 #import <ParseFacebookUtilsV4/PFFacebookUtils.h>
 #import "XYPieChart/XYPieChart/XYPieChart.h"
