@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 //import XYPieChart
 
 class ResultViewController: UIViewController {
@@ -16,6 +17,8 @@ class ResultViewController: UIViewController {
     
     var numQuestions: Int!
     var numQuestionsCorrect: Int!
+    var location: String
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
@@ -34,9 +37,9 @@ class ResultViewController: UIViewController {
         let photo : FBSDKSharePhoto = FBSDKSharePhoto()
         
         var query: PFQuery = PFQuery(className: "Cities")
-        var pfimage: PFObject?
+        var pfCity: PFObject?
         query.whereKey("name", equalTo: location)
-        pfQuestion = query.findObjects()?.first as? PFObject
+        pfCity = query.findObjects()?.first as? PFObject
         
         photo.image = info[UIImagePickerControllerOriginalImage] as! UIImage
         photo.userGenerated = true
