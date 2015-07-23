@@ -35,6 +35,7 @@
 		AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */; };
 		AAA021ED1B60461A0080D4FD /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021EC1B60461A0080D4FD /* ResultViewController.swift */; };
 		AAA021EF1B6048830080D4FD /* XYPieChart in Resources */ = {isa = PBXBuildFile; fileRef = AAA021EE1B6048830080D4FD /* XYPieChart */; };
+		AAC7344E1B6112740046EA05 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC734501B6112740046EA05 /* Localizable.strings */; };
 		AAF0185D1B5FEA82006841A7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185C1B5FEA82006841A7 /* Social.framework */; };
 		AAF0185F1B5FEA88006841A7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0185E1B5FEA88006841A7 /* StoreKit.framework */; };
 		AAF018611B5FEA8E006841A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF018601B5FEA8E006841A7 /* Security.framework */; };
@@ -91,6 +92,10 @@
 		AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LanguagesTableViewController.swift; path = ../LanguagesTableViewController.swift; sourceTree = "<group>"; };
 		AAA021EC1B60461A0080D4FD /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		AAA021EE1B6048830080D4FD /* XYPieChart */ = {isa = PBXFileReference; lastKnownFileType = folder; path = XYPieChart; sourceTree = "<group>"; };
+		AAC734481B6110040046EA05 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		AAC734491B6110040046EA05 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		AAC7344F1B6112740046EA05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AAC734511B6112770046EA05 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAF0185C1B5FEA82006841A7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		AAF0185E1B5FEA88006841A7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		AAF018601B5FEA8E006841A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -193,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				3351A4091B5EB1410054E71F /* Info.plist */,
+				AAC734501B6112740046EA05 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 3351A3FC1B5EB1400054E71F;
 			productRefGroup = 3351A4061B5EB1400054E71F /* Products */;
@@ -322,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC7344E1B6112740046EA05 /* Localizable.strings in Resources */,
 				3351A4101B5EB1410054E71F /* Main.storyboard in Resources */,
 				3351A4151B5EB1410054E71F /* LaunchScreen.xib in Resources */,
 				3351A4121B5EB1410054E71F /* Images.xcassets in Resources */,
@@ -382,6 +390,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				3351A40F1B5EB1410054E71F /* Base */,
+				AAC734481B6110040046EA05 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -390,8 +399,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				3351A4141B5EB1410054E71F /* Base */,
+				AAC734491B6110040046EA05 /* de */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		AAC734501B6112740046EA05 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AAC7344F1B6112740046EA05 /* en */,
+				AAC734511B6112770046EA05 /* de */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

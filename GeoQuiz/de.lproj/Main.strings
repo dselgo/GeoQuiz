@@ -1,0 +1,57 @@
+
+/* Class = "UILabel"; text = "Sound"; ObjectID = "8q0-7U-I2X"; */
+"8q0-7U-I2X.text" = "Sound";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "; ObjectID = "IwB-LX-lLK"; */
+"IwB-LX-lLK.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
+
+/* Class = "UIButton"; normalTitle = "Poor question"; ObjectID = "KAU-9i-Q2l"; */
+"KAU-9i-Q2l.normalTitle" = "Frage melden";
+
+/* Class = "UILabel"; text = "Time: "; ObjectID = "KBi-ua-ffB"; */
+"KBi-ua-ffB.text" = "Zeit: ";
+
+/* Class = "UIButton"; normalTitle = "Answer 4"; ObjectID = "KKe-2g-RLy"; */
+"KKe-2g-RLy.normalTitle" = "Antwort 4";
+
+/* Class = "UILabel"; text = "Notifications"; ObjectID = "O7r-BN-5Wl"; */
+"O7r-BN-5Wl.text" = "Benachrichtigungen";
+
+/* Class = "UIButton"; normalTitle = "Answer 2"; ObjectID = "Ohx-vr-Bn2"; */
+"Ohx-vr-Bn2.normalTitle" = "Antwort 2";
+
+/* Class = "UIButton"; normalTitle = "Options"; ObjectID = "fTc-Ov-hdI"; */
+"fTc-Ov-hdI.normalTitle" = "Optionen";
+
+/* Class = "UIButton"; normalTitle = "Answer 3"; ObjectID = "fWW-cM-G1C"; */
+"fWW-cM-G1C.normalTitle" = "Antwort 3";
+
+/* Class = "UIButton"; normalTitle = "Play"; ObjectID = "ftK-aV-IXj"; */
+"ftK-aV-IXj.normalTitle" = "Spiel starten";
+
+/* Class = "UILabel"; text = "Language"; ObjectID = "giH-aJ-1jB"; */
+"giH-aJ-1jB.text" = "Sprache";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "i33-jP-J2i"; */
+"i33-jP-J2i.text" = "Titel";
+
+/* Class = "UILabel"; text = "Notifications Sound"; ObjectID = "ifb-t0-mV7"; */
+"ifb-t0-mV7.text" = "Benachrichtigungen Musik";
+
+/* Class = "UILabel"; text = "English"; ObjectID = "mLK-1o-0Lo"; */
+"mLK-1o-0Lo.text" = "English";
+
+/* Class = "UIButton"; normalTitle = "Answer 1"; ObjectID = "mob-g5-93f"; */
+"mob-g5-93f.normalTitle" = "Antwort 1";
+
+/* Class = "UIButton"; normalTitle = "Next"; ObjectID = "pwD-2A-guT"; */
+"pwD-2A-guT.normalTitle" = "Weiter";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "ySN-gi-O5m"; */
+"ySN-gi-O5m.normalTitle" = "Logout";
+
+/* Class = "UIButton"; normalTitle = "Badges"; ObjectID = "yzc-f8-9Uv"; */
+"yzc-f8-9Uv.normalTitle" = "Errungenschaften";
+
+/* Class = "UISearchBar"; placeholder = "Search City"; ObjectID = "zKa-hJ-J8Q"; */
+"zKa-hJ-J8Q.placeholder" = "Stadt suchen";
