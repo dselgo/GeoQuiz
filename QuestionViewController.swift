@@ -89,7 +89,8 @@ class QuestionViewController: UIViewController {
     
     func updateTimer(){
         counter -= decrementTime
-        timerLabel.text = String(stringInterpolationSegment: counter)
+        //timerLabel.text = String(stringInterpolationSegment: counter)
+        timerLabel.text = NSString(format: "%.1f", counter) as String
         if(counter <= 0){
             timerLabel.text = "0.0"
             stopTimer()
