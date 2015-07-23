@@ -290,11 +290,10 @@ class QuestionViewController: UIViewController {
         }
 
         if segue.identifier == "showResults"{
-            /*
-            var yourNextViewController = (segue.destinationViewController as! ResultViewController)
-            yourNextViewController.numQuestionsCorrect = score
-            yourNextViewController.numQuestions = questionTotal
-            */
+            var target = (segue.destinationViewController as! ResultViewController)
+            target.numQuestionsCorrect = score
+            target.numQuestions = questionTotal
+            target.location = location
         }
     }
 }

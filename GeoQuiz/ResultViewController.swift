@@ -28,6 +28,12 @@ class ResultViewController: UIViewController {
     }
     @IBAction func facebookButtonPushed(sender: UIButton) {
         let photo : FBSDKSharePhoto = FBSDKSharePhoto()
+        
+        var query: PFQuery = PFQuery(className: "Cities")
+        var pfimage: PFObject?
+        query.whereKey("name", equalTo: location)
+        pfQuestion = query.findObjects()?.first as? PFObject
+        
         photo.image = info[UIImagePickerControllerOriginalImage] as! UIImage
         photo.userGenerated = true
         let content : FBSDKSharePhotoContent = FBSDKSharePhotoContent()
