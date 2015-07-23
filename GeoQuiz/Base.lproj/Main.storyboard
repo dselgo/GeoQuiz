@@ -302,6 +302,7 @@
                         <outlet property="nextButton" destination="pwD-2A-guT" id="3FM-Fh-cZy"/>
                         <outlet property="questionImage" destination="1su-Xc-RJG" id="X6N-2s-T7E"/>
                         <outlet property="questionText" destination="IwB-LX-lLK" id="doC-qI-gYI"/>
+                        <outlet property="reportButton" destination="KAU-9i-Q2l" id="Wql-Hd-hBI"/>
                         <outlet property="timerLabel" destination="KBi-ua-ffB" id="T4q-5R-rFx"/>
                     </connections>
                 </viewController>

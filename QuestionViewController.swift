@@ -17,6 +17,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var questionImage: UIImageView!
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
     
     let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     
@@ -168,6 +169,14 @@ class QuestionViewController: UIViewController {
             resetControls()
         } else {
             //segue into resultView
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if reportButton == sender as! UIButton {
+            var target: ReportViewController = segue.destinationViewController as! ReportViewController
+            target.location = location
+            target.questionNumber = questionNumber
         }
     }
 }
