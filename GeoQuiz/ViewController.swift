@@ -54,6 +54,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         loadCityList()
     }
     
+    /**
+    * Load all citys for the city list
+    */
     func loadCityList(){
         dispatch_async(backgroundQueue, {
             self.cityHandler = CityHandler(defaults: NSUserDefaults.standardUserDefaults())
@@ -76,6 +79,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         initializeStartScreen()
     }
     
+    /**
+    * Action, when the location Button is pressed
+    */
     @IBAction func locationButtonPressed(sender: UIButton) {
         self.view.endEditing(true)
         self.startLocationActivityAnimation()
@@ -84,18 +90,30 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         })
     }
     
+    /**
+    * starts the get location activity
+    * means, disable and enable buttons and start animating
+    */
     func startLocationActivityAnimation(){
         locationActivity.hidden = false
         locationButton.hidden = true
         locationActivity.startAnimating()
     }
     
+    /**
+    * stopps the get location activity
+    * means, disable and enable buttons and stop animating
+    */
     func stopLocationActivityAnimation(){
         locationActivity.hidden = true
         locationButton.hidden = false
         locationActivity.stopAnimating()
     }
     
+    /**
+    * Returns the City for the Current Location
+    * and searches it on the search bar
+    */
     func searchCityAtCurrentLocation(){
         geoLocation = GeoLocation()
         let currentLocation: PFGeoPoint? = geoLocation!.getLocation()
@@ -121,6 +139,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
  
+    /**
+    * Handels the search bar
+    */
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
         self.citiesFiltered = self.cityHandler!.cities.keys.filter({ (text) -> Bool in
             let tmp: NSString = text
@@ -263,7 +284,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    
+    /**
+    * Prepares the segue
+    */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if playButton == sender as! UIButton {
             var target: QuestionViewController = segue.destinationViewController as! QuestionViewController
