@@ -16,6 +16,7 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var questionImage: UIImageView!
 
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
@@ -24,13 +25,12 @@ class QuestionViewController: UIViewController {
     var counter: Double = 10.0
     let decrementTime: Double = 0.1
     
-    var gameOver: Bool = false
-    var roundOver: Bool = false
-    
-    let location: String = ""
+    var location: String = ""
     
     var question: Question! = nil
     var questionNumber: Int = 0
+    
+    var quiz: QuizHandler! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,10 @@ class QuestionViewController: UIViewController {
         answer4Button.layer.cornerRadius = cornerRadius
         answer4Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer4Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        runQuiz()
+        if (location != ""){
+            quiz = QuizHandler(location: location, startQuestionID: 1)
+            loadQuestion()
+        }
 
     }
 
@@ -59,36 +62,32 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func runQuiz(){
-        if (location != ""){
-            let quiz = QuizHandler(location: location, startQuestionID: 1)
-            while(!gameOver){
-                nextButton.enabled = false
-                question = quiz.getNextQuestion()!
-                questionNumber = quiz.questionNumber
-                questionText.text = question.text
-                answer1Button.setTitle(question.answers[0].text, forState: UIControlState.Normal)
-                answer2Button.setTitle(question.answers[1].text, forState: UIControlState.Normal)
-                answer3Button.setTitle(question.answers[2].text, forState: UIControlState.Normal)
-                answer4Button.setTitle(question.answers[3].text, forState: UIControlState.Normal)
-                
-                startTimer()
-                roundOver = false
-                
-                while(!roundOver){}
-                
-            }
-        }
+    func loadQuestion(){
+        nextButton.enabled = false
+        counter = 10.0
+        question = quiz.getNextQuestion({ (image) -> Void in
+            self.questionImage.image = image
+        })!
+        questionNumber = quiz.questionNumber
+        questionText.text = question.text
+        
+        answer1Button.setTitle(question.answers[0].text, forState: UIControlState.Normal)
+        answer2Button.setTitle(question.answers[1].text, forState: UIControlState.Normal)
+        answer3Button.setTitle(question.answers[2].text, forState: UIControlState.Normal)
+        answer4Button.setTitle(question.answers[3].text, forState: UIControlState.Normal)
+        
+        startTimer()
     }
     
     func startTimer(){
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(decrementTime, target:self, selector: Selector("updateTimer"), userInfo: nil, repeats: false)
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(decrementTime, target:self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
     }
     
     func updateTimer(){
         counter -= decrementTime
         timerLabel.text = String(stringInterpolationSegment: counter)
         if(counter <= 0){
+            timerLabel.text = "0.0"
             stopTimer()
         }
     }
@@ -136,6 +135,15 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func nextQuestion(sender: AnyObject) {
-        roundOver = true
+        if(quiz.nextQuestionAvailable()){
+            loadQuestion()
+            answer1Button.backgroundColor = UIColor.clearColor()
+            answer2Button.backgroundColor = UIColor.clearColor()
+            answer3Button.backgroundColor = UIColor.clearColor()
+            answer4Button.backgroundColor = UIColor.clearColor()
+            questionImage.image = nil
+        } else {
+            //segue into resultView
+        }
     }
 }

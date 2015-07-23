@@ -128,7 +128,14 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
-
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if playButton == sender as! UIButton {
+            var target: QuestionViewController = segue.destinationViewController as! QuestionViewController
+            println("works")
+            target.location = citySearchBar!.text
+        }
+    }
+    
 }
 
