@@ -204,16 +204,6 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwD-2A-guT">
-                                <rect key="frame" x="16" y="562" width="32" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="N5B-ta-K4S"/>
-                                    <constraint firstAttribute="height" constant="30" id="fIx-sS-3AZ"/>
-                                </constraints>
-                                <state key="normal" title="Next">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1su-Xc-RJG">
                                 <rect key="frame" x="200" y="28" width="200" height="80"/>
                                 <constraints>
@@ -226,6 +216,19 @@
                                 <state key="normal" title="Answer 1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwD-2A-guT">
+                                <rect key="frame" x="16" y="562" width="32" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="N5B-ta-K4S"/>
+                                    <constraint firstAttribute="height" constant="30" id="fIx-sS-3AZ"/>
+                                </constraints>
+                                <state key="normal" title="Next">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextQuestion:" destination="L9a-cn-OGw" eventType="touchUpInside" id="yXU-fV-huR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -260,8 +263,10 @@
                         <outlet property="answer2Button" destination="Ohx-vr-Bn2" id="A9f-yC-fQl"/>
                         <outlet property="answer3Button" destination="fWW-cM-G1C" id="gtc-XB-jKn"/>
                         <outlet property="answer4Button" destination="KKe-2g-RLy" id="HXd-q7-I7g"/>
-                        <outlet property="nextButton" destination="pwD-2A-guT" id="tzS-XD-qF0"/>
-                        <outlet property="questionImage" destination="1su-Xc-RJG" id="I25-BB-Ddu"/>
+                        <outlet property="nextButton" destination="pwD-2A-guT" id="3FM-Fh-cZy"/>
+                        <outlet property="questionImage" destination="1su-Xc-RJG" id="X6N-2s-T7E"/>
+                        <outlet property="questionText" destination="IwB-LX-lLK" id="doC-qI-gYI"/>
+                        <outlet property="timerLabel" destination="KBi-ua-ffB" id="T4q-5R-rFx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evx-LA-bnv" userLabel="First Responder" sceneMemberID="firstResponder"/>

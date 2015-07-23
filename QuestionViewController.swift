@@ -13,11 +13,11 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answer2Button: UIButton!
     @IBOutlet weak var answer3Button: UIButton!
     @IBOutlet weak var answer4Button: UIButton!
-    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var questionText: UITextView!
-    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var questionImage: UIImageView!
-
+    @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var nextButton: UIButton!
+    
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
     
