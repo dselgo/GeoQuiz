@@ -371,17 +371,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-eU-Dnc">
-                                <rect key="frame" x="16" y="319" width="568" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="IFj-r6-zQW"/>
-                                </constraints>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNx-1z-Eys">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNx-1z-Eys">
                                 <rect key="frame" x="16" y="347" width="154" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.21464839338897601" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1m8-b1-guR"/>
+                                    <constraint firstAttribute="width" constant="154" id="I4o-2g-7c1"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="dg1-dF-ywg"/>
                                     <constraint firstAttribute="width" constant="154" id="n2Q-TB-fLy"/>
                                 </constraints>
@@ -389,26 +384,16 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1m8-b1-guR"/>
+                                        <exclude reference="dg1-dF-ywg"/>
+                                        <exclude reference="n2Q-TB-fLy"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="tryAgainButtonPushed:" destination="utb-jb-weZ" eventType="touchUpInside" id="gji-gc-CJ3"/>
                                     <segue destination="L9a-cn-OGw" kind="show" identifier="restartQuiz" id="8up-M9-6x1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-oE-PDo">
-                                <rect key="frame" x="426" y="347" width="158" height="30"/>
-                                <color key="backgroundColor" red="0.0008313705192176668" green="0.19372773220487294" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="VfA-oU-ctk"/>
-                                    <constraint firstAttribute="width" constant="158" id="YsW-nC-geA"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="c7y-SH-4SF"/>
-                                </constraints>
-                                <state key="normal" title="Main Menu">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="menuButtonPushed:" destination="utb-jb-weZ" eventType="touchUpInside" id="KNv-3I-iCv"/>
-                                    <segue destination="O80-d3-fXZ" kind="show" identifier="returnToMainMenu" id="F8r-Fi-dCF"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Questions Right: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66x-nY-LUA">
@@ -425,28 +410,87 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-oE-PDo">
+                                <rect key="frame" x="426" y="347" width="158" height="30"/>
+                                <color key="backgroundColor" red="0.0008313705192176668" green="0.19372773220487294" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VfA-oU-ctk"/>
+                                    <constraint firstAttribute="width" constant="158" id="YsW-nC-geA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="c7y-SH-4SF"/>
+                                    <constraint firstAttribute="width" constant="158" id="mCg-sc-UwG"/>
+                                </constraints>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VfA-oU-ctk"/>
+                                        <exclude reference="YsW-nC-geA"/>
+                                        <exclude reference="c7y-SH-4SF"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="menuButtonPushed:" destination="utb-jb-weZ" eventType="touchUpInside" id="KNv-3I-iCv"/>
+                                    <segue destination="O80-d3-fXZ" kind="show" identifier="returnToMainMenu" id="F8r-Fi-dCF"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-eU-Dnc">
+                                <rect key="frame" x="16" y="319" width="568" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="8RM-YP-dYh"/>
+                                    <constraint firstAttribute="height" constant="20" id="IFj-r6-zQW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IFj-r6-zQW"/>
+                                    </mask>
+                                </variation>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="NGO-oE-PDo" secondAttribute="trailing" id="05H-yL-aum"/>
                             <constraint firstItem="NGO-oE-PDo" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" symbolic="YES" id="1pB-Tg-QTv"/>
+                            <constraint firstItem="cNx-1z-Eys" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" id="2Lw-uC-1QY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ob3-eU-Dnc" secondAttribute="trailing" id="8zz-Fs-Rsq"/>
                             <constraint firstItem="ob3-eU-Dnc" firstAttribute="top" secondItem="66x-nY-LUA" secondAttribute="bottom" constant="8" symbolic="YES" id="ABC-gZ-AtX"/>
                             <constraint firstAttribute="centerX" secondItem="66x-nY-LUA" secondAttribute="centerX" id="AfT-yS-KJ9"/>
                             <constraint firstItem="66x-nY-LUA" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="DtH-uh-k0k"/>
+                            <constraint firstItem="ob3-eU-Dnc" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="HV3-eq-0Y9"/>
+                            <constraint firstItem="NGO-oE-PDo" firstAttribute="trailing" secondItem="P8d-ss-mBp" secondAttribute="trailingMargin" id="JXU-dt-HxR"/>
                             <constraint firstItem="cNx-1z-Eys" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" symbolic="YES" id="KRa-eC-Hxt"/>
+                            <constraint firstItem="cNx-1z-Eys" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="M5V-hx-Kr7"/>
+                            <constraint firstItem="ob3-eU-Dnc" firstAttribute="trailing" secondItem="P8d-ss-mBp" secondAttribute="trailingMargin" id="OQQ-9a-Q4b"/>
+                            <constraint firstItem="ob3-eU-Dnc" firstAttribute="top" secondItem="66x-nY-LUA" secondAttribute="bottom" constant="8" id="REi-hr-o01"/>
                             <constraint firstAttribute="centerY" secondItem="66x-nY-LUA" secondAttribute="centerY" id="bfV-Y5-cSv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ob3-eU-Dnc" secondAttribute="trailing" id="cFJ-eJ-AD0"/>
+                            <constraint firstItem="NGO-oE-PDo" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" id="g0P-C5-8cp"/>
+                            <constraint firstItem="NGO-oE-PDo" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" id="hRK-01-t7v"/>
+                            <constraint firstItem="cNx-1z-Eys" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" id="htn-yL-hCB"/>
                             <constraint firstAttribute="centerY" secondItem="66x-nY-LUA" secondAttribute="centerY" id="m2C-NH-YYB"/>
                             <constraint firstItem="ob3-eU-Dnc" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="msi-XH-hd7"/>
                             <constraint firstItem="66x-nY-LUA" firstAttribute="trailing" secondItem="P8d-ss-mBp" secondAttribute="trailingMargin" id="pvF-mT-Kzh"/>
+                            <constraint firstItem="ob3-eU-Dnc" firstAttribute="top" secondItem="66x-nY-LUA" secondAttribute="bottom" constant="8" id="wM5-dS-8GJ"/>
+                            <constraint firstItem="NGO-oE-PDo" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" id="z5T-MZ-mUo"/>
                             <constraint firstItem="cNx-1z-Eys" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="zpG-AV-GDo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="AfT-yS-KJ9"/>
                                 <exclude reference="bfV-Y5-cSv"/>
+                                <exclude reference="8zz-Fs-Rsq"/>
                                 <exclude reference="ABC-gZ-AtX"/>
+                                <exclude reference="cFJ-eJ-AD0"/>
+                                <exclude reference="msi-XH-hd7"/>
+                                <exclude reference="wM5-dS-8GJ"/>
+                                <exclude reference="2Lw-uC-1QY"/>
+                                <exclude reference="KRa-eC-Hxt"/>
+                                <exclude reference="zpG-AV-GDo"/>
+                                <exclude reference="05H-yL-aum"/>
+                                <exclude reference="1pB-Tg-QTv"/>
+                                <exclude reference="g0P-C5-8cp"/>
+                                <exclude reference="z5T-MZ-mUo"/>
                             </mask>
                         </variation>
                     </view>
@@ -683,7 +727,7 @@
         <image name="LocationIcon" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8up-M9-6x1"/>
         <segue reference="F8r-Fi-dCF"/>
+        <segue reference="8up-M9-6x1"/>
     </inferredMetricsTieBreakers>
 </document>
