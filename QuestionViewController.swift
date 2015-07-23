@@ -76,7 +76,7 @@ class QuestionViewController: UIViewController {
         reportButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         
         self.questionText.editable = true
-        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 15)
+        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 14)
         self.questionText.editable = false
         
         resetControls()
