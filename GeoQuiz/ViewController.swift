@@ -21,8 +21,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var locationButton: UIButton!
     
     let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
-    let borderSize : CGFloat = 0.7
-    let cornerRadius : CGFloat = 5.0
+    let borderSize: CGFloat = 0.7
+    let cornerRadius: CGFloat = 5.0
+    let borderWidth: CGFloat = 2.0
     var geoLocation: GeoLocation?
     var citiesFiltered: [String] = []
     var cityHandler: CityHandler?
@@ -33,13 +34,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         self.title = "GeoQuiz"
         
-        playButton.layer.borderWidth = 1.0
+        playButton.layer.borderWidth = borderWidth
         playButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         playButton.layer.cornerRadius = cornerRadius
-        optionsButton.layer.borderWidth = 1.0
+        optionsButton.layer.borderWidth = borderWidth
         optionsButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         optionsButton.layer.cornerRadius = cornerRadius
-        badgesButton.layer.borderWidth = 1.0
+        badgesButton.layer.borderWidth = borderWidth
         badgesButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         badgesButton.layer.cornerRadius = cornerRadius
         

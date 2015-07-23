@@ -13,14 +13,9 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var numCorrectLabel: UILabel!
     @IBOutlet weak var numCorrectProgessBar: UIProgressView!
-    
-    var numQuestionsCorrect: Int!
-    var numQuestions: Int!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect!)"
-        numCorrectProgessBar.progress = Float(numQuestionsCorrect) / Float(numQuestions)
+        
     }
 
     override func didReceiveMemoryWarning() {

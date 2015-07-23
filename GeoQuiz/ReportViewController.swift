@@ -15,11 +15,18 @@ class ReportViewController: UIViewController {
     @IBOutlet weak var reportText: UITextView!
     @IBOutlet weak var submitButton: UIButton!
     
+    let borderSize: CGFloat = 0.7
+    let cornerRadius: CGFloat = 5.0
+    let borderWidth: CGFloat = 2.0
+    
     var questionId: Int = 0
     var location: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        submitButton.layer.borderWidth = borderWidth
+        submitButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        submitButton.layer.cornerRadius = cornerRadius
     }
     
     override func didReceiveMemoryWarning() {

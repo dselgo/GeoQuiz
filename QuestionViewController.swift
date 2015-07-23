@@ -24,8 +24,10 @@ class QuestionViewController: UIViewController {
     
     let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     
-    let borderSize : CGFloat = 0.7
-    let cornerRadius : CGFloat = 5.0
+    let borderSize: CGFloat = 0.7
+    let borderWidth: CGFloat = 2.0
+    let cornerRadius: CGFloat = 5.0
+    let backGroundColor: UIColor = UIColor.blueColor()
     
     var timer = NSTimer()
     var counter: Double = 10.0
@@ -53,25 +55,32 @@ class QuestionViewController: UIViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
-        answer1Button.layer.borderWidth = 1.0
+        answer1Button.layer.borderWidth = borderWidth
         answer1Button.layer.cornerRadius = cornerRadius
         answer1Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer1Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        answer2Button.layer.borderWidth = 1.0
+        answer2Button.layer.borderWidth = borderWidth
         answer2Button.layer.cornerRadius = cornerRadius
         answer2Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer2Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        answer3Button.layer.borderWidth = 1.0
+        answer3Button.layer.borderWidth = borderWidth
         answer3Button.layer.cornerRadius = cornerRadius
         answer3Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer3Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        answer4Button.layer.borderWidth = 1.0
+        answer4Button.layer.borderWidth = borderWidth
         answer4Button.layer.cornerRadius = cornerRadius
         answer4Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer4Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
         
+        nextButton.layer.borderWidth = borderWidth
+        nextButton.layer.cornerRadius = cornerRadius
+        nextButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        reportButton.layer.borderWidth = borderWidth
+        reportButton.layer.cornerRadius = cornerRadius
+        reportButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        
         self.questionText.editable = true
-        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 15)
+        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 14)
         self.questionText.editable = false
         
         resetControls()
@@ -250,10 +259,10 @@ class QuestionViewController: UIViewController {
      * Resets the background color of the buttons and removes the image at the beginning of each question
      */
     func resetControls(){
-        answer1Button.backgroundColor = UIColor.clearColor()
-        answer2Button.backgroundColor = UIColor.clearColor()
-        answer3Button.backgroundColor = UIColor.clearColor()
-        answer4Button.backgroundColor = UIColor.clearColor()
+        answer1Button.backgroundColor = backGroundColor
+        answer2Button.backgroundColor = backGroundColor
+        answer3Button.backgroundColor = backGroundColor
+        answer4Button.backgroundColor = backGroundColor
         questionImage.image = nil
     }
     
