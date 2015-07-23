@@ -64,6 +64,10 @@ class QuestionViewController: UIViewController {
     
     func loadQuestion(){
         nextButton.enabled = false
+        answer1Button.enabled = true
+        answer2Button.enabled = true
+        answer3Button.enabled = true
+        answer4Button.enabled = true
         counter = 10.0
         question = quiz.getNextQuestion({ (image) -> Void in
             self.questionImage.image = image
@@ -85,7 +89,8 @@ class QuestionViewController: UIViewController {
     
     func updateTimer(){
         counter -= decrementTime
-        timerLabel.text = String(stringInterpolationSegment: counter)
+        //timerLabel.text = String(stringInterpolationSegment: counter)
+        timerLabel.text = NSString(format: "%.1f", counter) as String
         if(counter <= 0){
             timerLabel.text = "0.0"
             stopTimer()
@@ -94,6 +99,10 @@ class QuestionViewController: UIViewController {
     
     //stops the timer when it reached 0 and highlights the correct answer
     func stopTimer(){
+        answer1Button.enabled = false
+        answer2Button.enabled = false
+        answer3Button.enabled = false
+        answer4Button.enabled = false
         timer.invalidate()
         if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
@@ -109,6 +118,10 @@ class QuestionViewController: UIViewController {
     
     //stops the timer and checks if the button pressed was correct
     func stopTimer(sender: UIButton!){
+        answer1Button.enabled = false
+        answer2Button.enabled = false
+        answer3Button.enabled = false
+        answer4Button.enabled = false
         timer.invalidate()
         if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
