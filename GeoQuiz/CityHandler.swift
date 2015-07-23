@@ -9,6 +9,10 @@
 import Foundation
 import Parse
 
+/**
+* Handles all City Badges with caching and downloading from parse.com
+* it provides also access to the user achieved badges
+*/
 class CityHandler{
     struct CityImage{
         var badge: UIImage
@@ -21,6 +25,12 @@ class CityHandler{
     var onlineVersion: Int?
     var localVersion: Int = 0
     
+    /**
+    * Initializes the CityHandler with all basic informations
+    *
+    * Params:
+    * defaults: Object which holds the default settings
+    */
     init(defaults: NSUserDefaults){
         self.cities = OrderedDictionary<String, CityImage>()
         self.badgeCities = []
@@ -32,20 +42,40 @@ class CityHandler{
         }
     }
     
+    /**
+    * Loads the badge city list
+    *
+    * Params:
+    * finishHandler: Will be called, when the loading finished
+    */
     func loadList(finishHandler: () -> Void) {
         onlineVersion = getOnlineVersion()
         loadBadgeList(finishHandler)
     }
     
+    /**
+    * Activates a Badge for the current user for a given location
+    *
+    * Params:
+    * city: City which he achieved
+    */
     func achieveBadge(city name: String) {
-        var badge: PFObject = PFObject(className: "UserBadges")
-        badge["username"] = PFUser.currentUser()!.username! as String
-        badge["city"] = name
-        badge.save()
-        
-        badgeCities += [name]
+        var query: PFQuery = PFQuery(className: "UserBadges")
+        query.whereKey("city", equalTo: name)
+        if query.findObjects()?.count <= 0{
+            var badge: PFObject = PFObject(className: "UserBadges")
+            badge["username"] = PFUser.currentUser()!.username! as String
+            badge["city"] = name
+            badge.save()
+            
+            badgeCities = []
+            loadBadgeStates()
+        }
     }
     
+    /**
+    * Loads the Badge States of the current user
+    */
     func loadBadgeStates(){
         if self.badgeCities.count > 0 {
             return
@@ -63,6 +93,12 @@ class CityHandler{
         }
     }
     
+    /**
+    * Loads the Badge List from parse
+    *
+    * Params:
+    * finishHandler: will be called, when the loading process is finished
+    */
     private func loadBadgeList(finishHandler: () -> Void){
         var query: PFQuery = PFQuery(className: "Cities")
             query.whereKey("name", notEqualTo: "")
@@ -93,6 +129,16 @@ class CityHandler{
         }
     }
     
+    /**
+    * Loads a Badge Image from the Internet and caches it locally
+    *
+    * Params:
+    * name: Badge to load
+    * imageFile: Parse Image File which can be downloaded
+    *
+    * Return Value:
+    * Image Object
+    */
     private func loadAndSaveBadgeImage(var name: String, imageFile: PFFile) -> UIImage {
         name = name.stringByReplacingOccurrencesOfString(" ", withString: "_")
         
@@ -103,12 +149,27 @@ class CityHandler{
         return image
     }
     
+    /**
+    * Loads a cached Badge Image for a City
+    *
+    * Params:
+    * name: Badge to load
+    *
+    * Return Value:
+    * Image Object
+    */
     private func loadChachedBadge(var name: String) -> UIImage{
         name = name.stringByReplacingOccurrencesOfString(" ", withString: "_")
         
         return UIImage(data:self.defaults.valueForKey(name) as! NSData)!
     }
     
+    /**
+    * Returns the city badge list version, which is available online
+    *
+    * Return Value:
+    * online version
+    */
     private func getOnlineVersion() -> Int {
         var query: PFQuery = PFQuery(className: "Version")
         return query.getFirstObject()!["version"] as! Int

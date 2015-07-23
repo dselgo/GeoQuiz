@@ -1,11 +1,11 @@
 
 /* Class = "UILabel"; text = "Sound"; ObjectID = "8q0-7U-I2X"; */
-"8q0-7U-I2X.text" = "Sound";
+"8q0-7U-I2X.text" = "Audio";
 
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "; ObjectID = "IwB-LX-lLK"; */
 "IwB-LX-lLK.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ";
 
-/* Class = "UIButton"; normalTitle = "Poor question"; ObjectID = "KAU-9i-Q2l"; */
+/* Class = "UIButton"; normalTitle = "Report Question"; ObjectID = "KAU-9i-Q2l"; */
 "KAU-9i-Q2l.normalTitle" = "Frage melden";
 
 /* Class = "UILabel"; text = "Time: "; ObjectID = "KBi-ua-ffB"; */
@@ -35,8 +35,14 @@
 /* Class = "UILabel"; text = "Title"; ObjectID = "i33-jP-J2i"; */
 "i33-jP-J2i.text" = "Titel";
 
+/* Class = "UIButton"; normalTitle = "Submit"; ObjectID = "ifF-7z-Th8"; */
+"ifF-7z-Th8.normalTitle" = "Melden";
+
 /* Class = "UILabel"; text = "Notifications Sound"; ObjectID = "ifb-t0-mV7"; */
-"ifb-t0-mV7.text" = "Benachrichtigungen Musik";
+"ifb-t0-mV7.text" = "Benachrichtigungsaudiowiedergabe";
+
+/* Class = "UILabel"; text = "Please let us know why this question is being reported:"; ObjectID = "kjE-ga-TNA"; */
+"kjE-ga-TNA.text" = "Lassen Sie uns bitte wissen, warum Sie diese Frage melden:";
 
 /* Class = "UILabel"; text = "English"; ObjectID = "mLK-1o-0Lo"; */
 "mLK-1o-0Lo.text" = "English";
@@ -48,10 +54,10 @@
 "pwD-2A-guT.normalTitle" = "Weiter";
 
 /* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "ySN-gi-O5m"; */
-"ySN-gi-O5m.normalTitle" = "Logout";
+"ySN-gi-O5m.normalTitle" = "Ausloggen";
 
 /* Class = "UIButton"; normalTitle = "Badges"; ObjectID = "yzc-f8-9Uv"; */
-"yzc-f8-9Uv.normalTitle" = "Erfolge";
+"yzc-f8-9Uv.normalTitle" = "Orden";
 
 /* Class = "UISearchBar"; placeholder = "Search City"; ObjectID = "zKa-hJ-J8Q"; */
 "zKa-hJ-J8Q.placeholder" = "Stadt suchen";

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
     @IBOutlet weak var answer1Button: UIButton!
@@ -30,8 +31,14 @@ class QuestionViewController: UIViewController {
     
     var location: String = ""
     
-    var question: Question?
+    var question: Question! = nil
     var questionNumber: Int = 0
+    
+    var correctSoundPath: NSURL! = nil
+    var correctSound: AVAudioPlayer! = nil
+    var wrongSoundPath: NSURL! = nil
+    var wrongSound: AVAudioPlayer! = nil
+    var soundsEnabled: Bool!
     
     var quiz: QuizHandler! = nil
     
@@ -53,9 +60,29 @@ class QuestionViewController: UIViewController {
         answer4Button.layer.cornerRadius = cornerRadius
         answer4Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer4Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-
+        
+        self.questionText.editable = true
+        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 15)
+        self.questionText.editable = false
+        
         resetControls()
         quiz = QuizHandler(location: location, startQuestionID: 1)
+        
+        correctSoundPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundCorrect", ofType: "wav")!)
+        correctSound = AVAudioPlayer(contentsOfURL: correctSoundPath, error: nil)
+        correctSound.prepareToPlay()
+        
+        wrongSoundPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundWrong", ofType: "wav")!)
+        wrongSound = AVAudioPlayer(contentsOfURL: wrongSoundPath, error: nil)
+        wrongSound.prepareToPlay()
+        
+        var defaults: NSUserDefaults = NSUserDefaults()
+        if let enabled: AnyObject = defaults.objectForKey("SoundEnabled") {
+            soundsEnabled = enabled as! Bool
+        } else {
+            soundsEnabled = true
+        }
+        
         loadQuestion()
     }
 
@@ -77,19 +104,17 @@ class QuestionViewController: UIViewController {
                 self.questionImage.image = image
             })
             
-            if self.question != nil {
-                self.questionNumber = self.quiz.questionNumber
+            self.questionNumber = self.quiz.questionNumber
             
-                dispatch_async(dispatch_get_main_queue()) {
-                    self.questionText.text = self.question!.text
-
-                    self.answer1Button.setTitle(self.question!.answers[0].text, forState: UIControlState.Normal)
-                    self.answer2Button.setTitle(self.question!.answers[1].text, forState: UIControlState.Normal)
-                    self.answer3Button.setTitle(self.question!.answers[2].text, forState: UIControlState.Normal)
-                    self.answer4Button.setTitle(self.question!.answers[3].text, forState: UIControlState.Normal)
+            dispatch_async(dispatch_get_main_queue()) {
+                self.questionText.text = self.question!.text
+                
+                self.answer1Button.setTitle(self.question.answers[0].text, forState: UIControlState.Normal)
+                self.answer2Button.setTitle(self.question.answers[1].text, forState: UIControlState.Normal)
+                self.answer3Button.setTitle(self.question.answers[2].text, forState: UIControlState.Normal)
+                self.answer4Button.setTitle(self.question.answers[3].text, forState: UIControlState.Normal)
         
-                    self.startTimer()
-                }
+                self.startTimer()
             }
         })
     }
@@ -108,6 +133,18 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    func playCorrectSong() {
+        if soundsEnabled! {
+            correctSound.play()
+        }
+    }
+    
+    func playWrongSong() {
+        if soundsEnabled! {
+            wrongSound.play()
+        }
+    }
+    
     //stops the timer when it reached 0 and highlights the correct answer
     func stopTimer(){
         answer1Button.enabled = false
@@ -115,14 +152,18 @@ class QuestionViewController: UIViewController {
         answer3Button.enabled = false
         answer4Button.enabled = false
         timer.invalidate()
-        if(question!.answers[0].isCorrect){
+        if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
-        } else if(question!.answers[1].isCorrect){
+            playWrongSong()
+        } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
-        } else if(question!.answers[2].isCorrect){
+            playWrongSong()
+        } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
+            playWrongSong()
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
+            playWrongSong()
         }
         nextButton.enabled = true
     }
@@ -134,25 +175,37 @@ class QuestionViewController: UIViewController {
         answer3Button.enabled = false
         answer4Button.enabled = false
         timer.invalidate()
-        if(question!.answers[0].isCorrect){
+        if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
             if(sender != answer1Button){
                 sender.backgroundColor = UIColor.redColor()
+                playWrongSong()
+            } else {
+                playCorrectSong()
             }
-        } else if(question!.answers[1].isCorrect){
+        } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
             if(sender != answer2Button){
                 sender.backgroundColor = UIColor.redColor()
+                playWrongSong()
+            } else {
+                playCorrectSong()
             }
-        } else if(question!.answers[2].isCorrect){
+        } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
             if(sender != answer3Button){
                 sender.backgroundColor = UIColor.redColor()
+                playWrongSong()
+            } else {
+                playCorrectSong()
             }
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
             if(sender != answer4Button){
                 sender.backgroundColor = UIColor.redColor()
+                playWrongSong()
+            } else {
+                playCorrectSong()
             }
         }
         nextButton.enabled = true
@@ -180,7 +233,7 @@ class QuestionViewController: UIViewController {
         if reportButton == sender as! UIButton {
             var target: ReportViewController = segue.destinationViewController as! ReportViewController
             target.location = location
-            target.questionNumber = questionNumber
+            target.questionId = questionNumber - 1
         }
     }
 }
