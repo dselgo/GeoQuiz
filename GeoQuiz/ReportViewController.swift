@@ -11,10 +11,11 @@ import Parse
 
 class ReportViewController: UIViewController {
     
+
     @IBOutlet weak var reportText: UITextView!
     @IBOutlet weak var submitButton: UIButton!
     
-    var questionNumber: Int = 0
+    var questionId: Int = 0
     var location: String = ""
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class ReportViewController: UIViewController {
     @IBAction func submitQuestion(sender: AnyObject) {
         var pfItem = PFObject(className: "Report")
         pfItem["city"] = location
-        pfItem["questionId"] = questionNumber
+        pfItem["questionId"] = questionId
         pfItem["description"] = reportText.text
         pfItem.saveInBackgroundWithBlock {
             (success: Bool, error: NSError?) -> Void in

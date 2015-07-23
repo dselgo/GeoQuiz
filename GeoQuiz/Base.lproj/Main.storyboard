@@ -239,6 +239,13 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1su-Xc-RJG">
+                                <rect key="frame" x="200" y="72" width="200" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="bPI-Xm-xFi"/>
+                                    <constraint firstAttribute="height" constant="80" id="byV-B3-3Px"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mob-g5-93f">
                                 <rect key="frame" x="16" y="220" width="568" height="30"/>
                                 <state key="normal" title="Answer 1">
@@ -261,13 +268,6 @@
                                     <segue destination="5JG-K8-JT2" kind="show" id="NxL-N0-efI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1su-Xc-RJG">
-                                <rect key="frame" x="200" y="72" width="200" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="bPI-Xm-xFi"/>
-                                    <constraint firstAttribute="height" constant="80" id="byV-B3-3Px"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
