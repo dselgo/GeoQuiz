@@ -24,6 +24,8 @@ class ResultViewController: UIViewController {
         numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
         var percentage = Float(numQuestionsCorrect)/Float(numQuestions)
         numCorrectProgessBar.progress = percentage
+        
+        enableBadgeIfAllCorrect()
     }
 
     func enableBadgeIfAllCorrect(){
@@ -55,6 +57,7 @@ class ResultViewController: UIViewController {
         photo.userGenerated = true
         let content : FBSDKSharePhotoContent = FBSDKSharePhotoContent()
         content.photos = [photo]
+
         FBSDKShareButton *button = [[FBSDKShareButton alloc] init]
         button.shareContent = content
         [self.view addSubview:button]
@@ -62,15 +65,18 @@ class ResultViewController: UIViewController {
     
     @IBAction func tryAgainButtonPushed(sender: AnyObject) {
     }
-    /*
+    
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+      if segue.identifier == "restartQuiz" {
+        var target = (segue.destinationViewController as! QuestionViewController)
+        target.location = quizLocation
+        target.quizLocation = quizLocation
+        }
     }
-    */
+    
 }
 
 
