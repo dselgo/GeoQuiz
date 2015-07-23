@@ -95,7 +95,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             }
             
         } else {
-            var alert: UIAlertView = UIAlertView(title: "Location error", message: "Could not detect your current position. Pleasy try again.", delegate: self, cancelButtonTitle: "OK")
+            
+            
+            var alert: UIAlertView = UIAlertView(title: NSLocalizedString("LOCATION_ERROR_TITLE", comment: "Location Error"), message: NSLocalizedString("LOCATION_ERROR_MESSAGE", comment: "Location Error"), delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }
     }
@@ -217,7 +219,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return true;
         }
         
-        var alert = UIAlertView(title: "Missing login info", message: "Make sure you fill in the username and password!", delegate: nil, cancelButtonTitle: "OK")
+        var alert = UIAlertView(title: NSLocalizedString("SIGNUP_ERROR_TITLE", comment: "Signup Error"), message: NSLocalizedString("SIGNUP_ERROR_MESSAGE", comment: "Signup Error"), delegate: nil, cancelButtonTitle: "OK")
         alert.show()
         
         return false
@@ -229,7 +231,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
         if error != nil {
-            var alert: UIAlertView = UIAlertView(title: error?.localizedDescription, message: "Please check your credentials or use (Sign Up) to create a new account", delegate: self, cancelButtonTitle: "OK")
+            var alert: UIAlertView = UIAlertView(title: error?.localizedDescription, message: NSLocalizedString("LOGIN_ERROR_MESSAGE", comment: "Login Error"), delegate: self, cancelButtonTitle: "OK")
             alert.show()
         }
     }

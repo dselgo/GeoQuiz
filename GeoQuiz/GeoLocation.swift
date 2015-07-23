@@ -48,7 +48,7 @@ class GeoLocation {
         CLGeocoder().reverseGeocodeLocation(location, completionHandler: {(placemarks, error) -> Void in
             if error != nil {
                 locationHandler(nil)
-                println("Reverse geocoder failed with error" + error.localizedDescription)
+                println(NSLocalizedString("GEOCODING_ERROR", comment: "geocoding Error") + error.localizedDescription)
             } else {
                 
                 if placemarks.count > 0 {
