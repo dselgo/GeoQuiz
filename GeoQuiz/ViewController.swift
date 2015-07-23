@@ -17,9 +17,11 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     @IBOutlet weak var badgesButton: UIButton!
     @IBOutlet weak var citySearchBar: UISearchBar!
     
-    let geoLocation: GeoLocation = GeoLocation()
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
+    var geoLocation: GeoLocation?
+    var cities: [String] = []
+    var cityHandler: CityHandler?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +33,12 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         optionsButton.layer.cornerRadius = cornerRadius
         badgesButton.layer.borderWidth = 1.0
         badgesButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
-        badgesButton.layer.cornerRadius = cornerRadius}
-
+        badgesButton.layer.cornerRadius = cornerRadius
+        
+        geoLocation = GeoLocation()
+        cityHandler = CityHandler(defaults: NSUserDefaults.standardUserDefaults())
+        //loadCityList()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,6 +62,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
             citySearchBar.text = cityObject!["name"] as! String
         } else {
             var alert: UIAlertView = UIAlertView(title: "Location error", message: "Could not detect your current position. Pleasy try again.", delegate: self, cancelButtonTitle: "OK")
+            alert.show()
         }
     }
     /*
@@ -85,7 +92,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
         var loginCtrl = PFLogInViewController()
         loginCtrl.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.LogInButton | PFLogInFields.Facebook | PFLogInFields.SignUpButton
-        loginCtrl.facebookPermissions = ["public_profile"]
+        loginCtrl.facebookPermissions = ["friends_about_me"]
         loginCtrl.logInView?.logo = logInLogoTitle
         loginCtrl.delegate = self
             
@@ -129,10 +136,13 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    func logInViewControllerDidCancelLogIn(logInController: PFLogInViewController) {
+        println("login canceled by user")
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if playButton == sender as! UIButton {
             var target: QuestionViewController = segue.destinationViewController as! QuestionViewController
-            println("works")
             target.location = citySearchBar!.text
         }
     }
