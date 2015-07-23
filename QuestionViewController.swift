@@ -73,7 +73,7 @@ class QuestionViewController: UIViewController {
         answer4Button.backgroundColor = backGroundColor
         
         self.questionText.editable = true
-        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 15)
+        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 14)
         self.questionText.editable = false
         
         resetControls()
