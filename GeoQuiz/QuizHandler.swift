@@ -21,6 +21,7 @@ class QuizHandler{
     var numberOfQuestions: Int
     var questionNumber: Int
     var questionId: Int64
+    var questionCount: Int?
     
     init(location: String, startQuestionID: Int64){
         self.location = location.stringByReplacingOccurrencesOfString(" ", withString: "_") + "_" + NSLocalizedString("LANGUAGE_SHORTCUT", comment: "EN")
@@ -30,7 +31,20 @@ class QuizHandler{
     }
     
     func nextQuestionAvailable() -> Bool {
-        return questionNumber <= numberOfQuestions
+        if questionCount == nil {
+            self.questionCount = self.getQuestionCount()
+        }
+        return questionNumber <= numberOfQuestions && questionNumber < questionCount!
+    }
+    
+    func getQuestionCount() -> Int {
+        var query: PFQuery = PFQuery(className: location)
+        query.orderByDescending("questionId")
+        query.limit = 1
+        
+        var pfCount: PFObject = (query.findObjects()?.first as? PFObject)!
+        
+        return (pfCount["questionId"] as! String).toInt()!
     }
     
     func getNextQuestion(imageHandler: (image: UIImage) -> Void) -> Question?{

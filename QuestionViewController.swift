@@ -29,7 +29,7 @@ class QuestionViewController: UIViewController {
     
     var location: String = ""
     
-    var question: Question! = nil
+    var question: Question?
     var questionNumber: Int = 0
     
     var quiz: QuizHandler! = nil
@@ -74,18 +74,21 @@ class QuestionViewController: UIViewController {
         dispatch_async(backgroundQueue, {
             self.question = self.quiz.getNextQuestion({ (image) -> Void in
                 self.questionImage.image = image
-            })!
-            self.questionNumber = self.quiz.questionNumber
+            })
             
-            dispatch_async(dispatch_get_main_queue()) {
-                self.questionText.text = self.question.text
+            if self.question != nil {
+                self.questionNumber = self.quiz.questionNumber
+            
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.questionText.text = self.question!.text
 
-                self.answer1Button.setTitle(self.question.answers[0].text, forState: UIControlState.Normal)
-                self.answer2Button.setTitle(self.question.answers[1].text, forState: UIControlState.Normal)
-                self.answer3Button.setTitle(self.question.answers[2].text, forState: UIControlState.Normal)
-                self.answer4Button.setTitle(self.question.answers[3].text, forState: UIControlState.Normal)
+                    self.answer1Button.setTitle(self.question!.answers[0].text, forState: UIControlState.Normal)
+                    self.answer2Button.setTitle(self.question!.answers[1].text, forState: UIControlState.Normal)
+                    self.answer3Button.setTitle(self.question!.answers[2].text, forState: UIControlState.Normal)
+                    self.answer4Button.setTitle(self.question!.answers[3].text, forState: UIControlState.Normal)
         
-                self.startTimer()
+                    self.startTimer()
+                }
             }
         })
     }
@@ -111,11 +114,11 @@ class QuestionViewController: UIViewController {
         answer3Button.enabled = false
         answer4Button.enabled = false
         timer.invalidate()
-        if(question.answers[0].isCorrect){
+        if(question!.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
-        } else if(question.answers[1].isCorrect){
+        } else if(question!.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
-        } else if(question.answers[2].isCorrect){
+        } else if(question!.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
@@ -130,17 +133,17 @@ class QuestionViewController: UIViewController {
         answer3Button.enabled = false
         answer4Button.enabled = false
         timer.invalidate()
-        if(question.answers[0].isCorrect){
+        if(question!.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
             if(sender != answer1Button){
                 sender.backgroundColor = UIColor.redColor()
             }
-        } else if(question.answers[1].isCorrect){
+        } else if(question!.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
             if(sender != answer2Button){
                 sender.backgroundColor = UIColor.redColor()
             }
-        } else if(question.answers[2].isCorrect){
+        } else if(question!.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
             if(sender != answer3Button){
                 sender.backgroundColor = UIColor.redColor()
@@ -168,6 +171,7 @@ class QuestionViewController: UIViewController {
             resetControls()
         } else {
             //segue into resultView
+            performSegueWithIdentifier("showResults", sender: sender)
         }
     }
 }

@@ -303,6 +303,7 @@
                         <outlet property="questionImage" destination="1su-Xc-RJG" id="X6N-2s-T7E"/>
                         <outlet property="questionText" destination="IwB-LX-lLK" id="doC-qI-gYI"/>
                         <outlet property="timerLabel" destination="KBi-ua-ffB" id="T4q-5R-rFx"/>
+                        <segue destination="utb-jb-weZ" kind="show" identifier="showResults" id="c0A-g3-4l7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evx-LA-bnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
