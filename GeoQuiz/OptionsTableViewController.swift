@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class OptionsTableViewController: UITableViewController {
 
@@ -39,6 +40,9 @@ class OptionsTableViewController: UITableViewController {
         return 4
     }
 
+    @IBAction func logoutClick(sender: AnyObject) {
+        PFUser.logOut()
+    }
     
     /*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("OptionsCell") as! UITableViewCell

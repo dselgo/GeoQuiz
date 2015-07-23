@@ -306,6 +306,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
+                                <action selector="logoutClick:" destination="G7R-7t-pyq" eventType="touchUpInside" id="P2d-A0-oIe"/>
                                 <segue destination="O80-d3-fXZ" kind="show" identifier="userLogout" id="Hyr-yE-QeD"/>
                             </connections>
                         </button>
