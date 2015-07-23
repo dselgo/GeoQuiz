@@ -93,7 +93,9 @@ class CityHandler{
         }
     }
     
-    private func loadAndSaveBadgeImage(name: String, imageFile: PFFile) -> UIImage {
+    private func loadAndSaveBadgeImage(var name: String, imageFile: PFFile) -> UIImage {
+        name = name.stringByReplacingOccurrencesOfString(" ", withString: "_")
+        
         var image: UIImage = UIImage(data:imageFile.getData()!)!
         var imageData: NSData = UIImagePNGRepresentation(image)
         self.defaults.setObject(imageData, forKey: name)
@@ -101,7 +103,9 @@ class CityHandler{
         return image
     }
     
-    private func loadChachedBadge(name: String) -> UIImage{
+    private func loadChachedBadge(var name: String) -> UIImage{
+        name = name.stringByReplacingOccurrencesOfString(" ", withString: "_")
+        
         return UIImage(data:self.defaults.valueForKey(name) as! NSData)!
     }
     

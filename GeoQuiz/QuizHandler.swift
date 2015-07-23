@@ -23,7 +23,7 @@ class QuizHandler{
     var questionId: Int64
     
     init(location: String, startQuestionID: Int64){
-        self.location = location
+        self.location = location.stringByReplacingOccurrencesOfString(" ", withString: "_")
         self.numberOfQuestions = 10
         self.questionId = startQuestionID
         self.questionNumber = 1

@@ -5,3 +5,15 @@
   Created by Deforation on 23.07.15.
   Copyright (c) 2015 Team F. All rights reserved.
 */
+
+LOCATION_ERROR_TITLE = "Location error";
+LOCATION_ERROR_MESSAGE = "Could not detect your current position. Pleasy try again.";
+
+SIGNUP_ERROR_TITLE = "Missing login info";
+SIGNUP_ERROR_MESSAGE = "Make sure you fill in the username and password!";
+
+LOGIN_ERROR_MESSAGE = "Please check your credentials or use (Sign Up) to create a new account";
+
+GEOCODING_ERROR = "Reverse geocoder failed with error";
+
+BADGE_NOT_ACHIEVED = "Not achieved yet";

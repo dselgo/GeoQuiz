@@ -48,7 +48,7 @@ class BadgeTableViewController: UITableViewController {
         let image: UIImage?
         
         if indexPath.row >= cityHandler.badgeCities.count {
-            city = "Not achieved yet"
+            city = NSLocalizedString("BADGE_NOT_ACHIEVED", comment: "badge not achieved")
             image = UIImage(named: "questionmark")!
         } else {
             city = cityHandler.badgeCities[indexPath.row]

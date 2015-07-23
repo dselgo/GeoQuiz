@@ -15,6 +15,7 @@
 		3351A4211B5EB1410054E71F /* GeoQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3351A4201B5EB1410054E71F /* GeoQuizTests.swift */; };
 		338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */; };
 		A80672FE1B6014C1004A92ED /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80672FD1B6014C1004A92ED /* Question.swift */; };
+		A8F4385E1B6121F000227BB0 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F4385D1B6121F000227BB0 /* ReportViewController.swift */; };
 		AA01D8411B6069C9009A7309 /* CityHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA01D8401B6069C9009A7309 /* CityHandler.swift */; };
 		AA02A25C1B602759004766B2 /* GeoLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA02A25B1B602759004766B2 /* GeoLocation.swift */; };
 		AA236E7B1B5FE278004DF047 /* QuizHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA236E7A1B5FE278004DF047 /* QuizHandler.swift */; };
@@ -72,6 +73,7 @@
 		3351A4201B5EB1410054E71F /* GeoQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizTests.swift; sourceTree = "<group>"; };
 		338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeTableViewController.swift; sourceTree = "<group>"; };
 		A80672FD1B6014C1004A92ED /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A8F4385D1B6121F000227BB0 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		AA01D8401B6069C9009A7309 /* CityHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHandler.swift; sourceTree = "<group>"; };
 		AA02A25B1B602759004766B2 /* GeoLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoLocation.swift; sourceTree = "<group>"; };
 		AA236E7A1B5FE278004DF047 /* QuizHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizHandler.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */,
 				3351A40E1B5EB1410054E71F /* Main.storyboard */,
 				AAA021EC1B60461A0080D4FD /* ResultViewController.swift */,
+				A8F4385D1B6121F000227BB0 /* ReportViewController.swift */,
 				AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */,
 				AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */,
 				3351A4111B5EB1410054E71F /* Images.xcassets */,
@@ -357,6 +360,7 @@
 				AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */,
 				AA01D8411B6069C9009A7309 /* CityHandler.swift in Sources */,
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
+				A8F4385E1B6121F000227BB0 /* ReportViewController.swift in Sources */,
 				AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */,
 				3351A40D1B5EB1410054E71F /* ViewController.swift in Sources */,
 				A80672FE1B6014C1004A92ED /* Question.swift in Sources */,

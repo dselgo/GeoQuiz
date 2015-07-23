@@ -5,3 +5,15 @@
   Created by Deforation on 23.07.15.
   Copyright (c) 2015 Team F. All rights reserved.
 */
+
+LOCATION_ERROR_TITLE = "Ortungsfehler";
+LOCATION_ERROR_MESSAGE = "Ihre aktuelle Poisition konnte nicht ermittelt werden. Versuchen Sie es bitte erneut.";
+
+SIGNUP_ERROR_TITLE = "Fehlende Logininfomrationen";
+SIGNUP_ERROR_MESSAGE = "Stellen Sie sicher, dass der Benutzername und das Passwort ausgefüllt ist.";
+
+LOGIN_ERROR_MESSAGE = "Prüfen Sie ihre Angaben oder erstellen Sie einen neuen Account.";
+
+GEOCODING_ERROR = "Reverse geocoder hat ein Problem festgestellt.";
+
+BADGE_NOT_ACHIEVED = "Noch nicht freigeschaltet";
