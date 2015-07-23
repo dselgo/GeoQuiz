@@ -234,14 +234,6 @@
                                     <action selector="nextQuestion:" destination="L9a-cn-OGw" eventType="touchUpInside" id="yXU-fV-huR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-vr-Bn2">
-                                <rect key="frame" x="16" y="258" width="568" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Answer 2">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWW-cM-G1C">
                                 <rect key="frame" x="16" y="296" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -313,6 +305,14 @@
                                 <connections>
                                     <segue destination="5JG-K8-JT2" kind="show" id="NxL-N0-efI"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ohx-vr-Bn2">
+                                <rect key="frame" x="16" y="258" width="568" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Answer 2">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -459,45 +459,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rLE-Tz-tN6">
-                                <rect key="frame" x="16" y="179" width="568" height="201"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-7z-Th8">
-                                <rect key="frame" x="16" y="410" width="568" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-7z-Th8">
+                                <rect key="frame" x="16" y="331" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dP4-eK-GIe"/>
+                                </constraints>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="submitQuestion:" destination="WDo-7T-5Gz" eventType="touchUpInside" id="T8z-Du-3d1"/>
+                                    <action selector="submitQuestion:" destination="5JG-K8-JT2" eventType="touchUpInside" id="f2z-Q9-ANn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Please let us know why this question is being reported:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjE-ga-TNA">
-                                <rect key="frame" x="16" y="92" width="568" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please let us know why this question is being reported:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjE-ga-TNA">
+                                <rect key="frame" x="16" y="64" width="568" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="cto-fY-H46"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rLE-Tz-tN6">
+                                <rect key="frame" x="16" y="122" width="568" height="201"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="201" id="h9S-ic-b7z"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="ifF-7z-Th8" firstAttribute="trailing" secondItem="WDo-7T-5Gz" secondAttribute="trailingMargin" id="2No-qk-rHY"/>
+                            <constraint firstItem="rLE-Tz-tN6" firstAttribute="leading" secondItem="WDo-7T-5Gz" secondAttribute="leadingMargin" id="85e-YG-Wq3"/>
                             <constraint firstItem="ifF-7z-Th8" firstAttribute="leading" secondItem="WDo-7T-5Gz" secondAttribute="leadingMargin" id="8Gy-fu-2kA"/>
+                            <constraint firstItem="ifF-7z-Th8" firstAttribute="leading" secondItem="WDo-7T-5Gz" secondAttribute="leadingMargin" id="BFj-Q7-3Om"/>
+                            <constraint firstItem="kjE-ga-TNA" firstAttribute="trailing" secondItem="WDo-7T-5Gz" secondAttribute="trailingMargin" id="JnD-gq-A2L"/>
+                            <constraint firstItem="rLE-Tz-tN6" firstAttribute="top" secondItem="CRF-9k-yGW" secondAttribute="bottom" constant="58" id="Kb6-gZ-nc4"/>
                             <constraint firstItem="rLE-Tz-tN6" firstAttribute="trailing" secondItem="WDo-7T-5Gz" secondAttribute="trailingMargin" id="Kn4-ai-JeK"/>
+                            <constraint firstItem="rLE-Tz-tN6" firstAttribute="trailing" secondItem="WDo-7T-5Gz" secondAttribute="trailingMargin" id="S0c-48-w00"/>
+                            <constraint firstItem="ifF-7z-Th8" firstAttribute="trailing" secondItem="WDo-7T-5Gz" secondAttribute="trailingMargin" id="Ymo-eB-9St"/>
                             <constraint firstItem="kjE-ga-TNA" firstAttribute="trailing" secondItem="WDo-7T-5Gz" secondAttribute="trailingMargin" id="ZHZ-wC-orD"/>
                             <constraint firstItem="rLE-Tz-tN6" firstAttribute="leading" secondItem="WDo-7T-5Gz" secondAttribute="leadingMargin" id="Zka-2J-ZiM"/>
                             <constraint firstItem="ifF-7z-Th8" firstAttribute="top" secondItem="rLE-Tz-tN6" secondAttribute="bottom" constant="30" id="g4t-VS-haV"/>
-                            <constraint firstItem="rLE-Tz-tN6" firstAttribute="top" secondItem="kjE-ga-TNA" secondAttribute="bottom" constant="27" id="shO-Ni-Bjp"/>
+                            <constraint firstItem="kjE-ga-TNA" firstAttribute="top" secondItem="CRF-9k-yGW" secondAttribute="bottom" id="hK2-C5-R8g"/>
+                            <constraint firstItem="kjE-ga-TNA" firstAttribute="top" secondItem="CRF-9k-yGW" secondAttribute="bottom" id="kJZ-gN-JQ1"/>
+                            <constraint firstItem="kjE-ga-TNA" firstAttribute="top" secondItem="WDo-7T-5Gz" secondAttribute="topMargin" constant="64" id="omv-OU-W14"/>
+                            <constraint firstItem="ifF-7z-Th8" firstAttribute="top" secondItem="rLE-Tz-tN6" secondAttribute="bottom" constant="8" id="rsZ-z9-Ggz"/>
+                            <constraint firstItem="rLE-Tz-tN6" firstAttribute="top" secondItem="kjE-ga-TNA" secondAttribute="bottom" constant="55" id="shO-Ni-Bjp"/>
                             <constraint firstItem="kjE-ga-TNA" firstAttribute="leading" secondItem="WDo-7T-5Gz" secondAttribute="leadingMargin" id="tHf-4X-scV"/>
+                            <constraint firstItem="kjE-ga-TNA" firstAttribute="leading" secondItem="WDo-7T-5Gz" secondAttribute="leadingMargin" id="uLl-gC-qu8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ZHZ-wC-orD"/>
+                                <exclude reference="hK2-C5-R8g"/>
+                                <exclude reference="omv-OU-W14"/>
+                                <exclude reference="tHf-4X-scV"/>
+                                <exclude reference="Kn4-ai-JeK"/>
+                                <exclude reference="Zka-2J-ZiM"/>
+                                <exclude reference="shO-Ni-Bjp"/>
+                                <exclude reference="2No-qk-rHY"/>
+                                <exclude reference="8Gy-fu-2kA"/>
+                                <exclude reference="g4t-VS-haV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
-                        <outlet property="reportText" destination="rLE-Tz-tN6" id="Jst-os-PcZ"/>
-                        <outlet property="submitButton" destination="ifF-7z-Th8" id="yyM-cv-zy9"/>
+                        <outlet property="reportText" destination="rLE-Tz-tN6" id="VQK-Px-oHv"/>
+                        <outlet property="submitButton" destination="ifF-7z-Th8" id="ixf-xI-RvG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wj0-Hw-oZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -635,6 +669,6 @@
         <image name="LocationIcon" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Hyr-yE-QeD"/>
+        <segue reference="482-yh-F3e"/>
     </inferredMetricsTieBreakers>
 </document>

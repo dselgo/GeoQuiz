@@ -80,7 +80,7 @@ class QuestionViewController: UIViewController {
         reportButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         
         self.questionText.editable = true
-        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 14)
+        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 13.5)
         self.questionText.editable = false
         
         resetControls()
@@ -288,10 +288,13 @@ class QuestionViewController: UIViewController {
             target.location = location
             target.questionId = questionNumber - 1
         }
+
         if segue.identifier == "showResults"{
+            /*
             var yourNextViewController = (segue.destinationViewController as! ResultViewController)
             yourNextViewController.numQuestionsCorrect = score
             yourNextViewController.numQuestions = questionTotal
+            */
         }
     }
 }
