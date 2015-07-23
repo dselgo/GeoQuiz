@@ -30,7 +30,7 @@ class QuestionViewController: UIViewController {
     let backGroundColor: UIColor = UIColor.blueColor()
     
     var timer = NSTimer()
-    var counter: Double = 10.0
+    var counter: Double = 30.0
     let decrementTime: Double = 0.1
     
     var location: String = ""
