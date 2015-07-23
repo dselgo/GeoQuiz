@@ -174,7 +174,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if searchActive {
             return citiesFiltered.count
         } else {
-            return cityHandler!.cities.count
+            if cityHandler != nil {
+                return cityHandler!.cities.count
+            } else {
+                return 0
+            }
         }
     }
     
