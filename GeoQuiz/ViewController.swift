@@ -90,7 +90,7 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
         
         var loginCtrl = PFLogInViewController()
         loginCtrl.fields = PFLogInFields.UsernameAndPassword | PFLogInFields.LogInButton | PFLogInFields.Facebook | PFLogInFields.SignUpButton
-        loginCtrl.facebookPermissions = ["friends_about_me"]
+        loginCtrl.facebookPermissions = ["public_profile"]
         loginCtrl.logInView?.logo = logInLogoTitle
         loginCtrl.delegate = self
             
