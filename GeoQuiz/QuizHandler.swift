@@ -2,19 +2,12 @@
 //  QuizHandler.swift
 //  parseDataLoad
 //
-//  Created by Deforation on 22.07.15.
+//  Created by Remo Schweizer and Danny Selgo on 22.07.15.
 //  Copyright (c) 2015 teamF. All rights reserved.
 //
 
 import Foundation
 import Parse
-
-/*struct QuizQuestion {
-    var text: String
-    var answers: (answer1: String, answer2: String, answer3: String, answer4: String)
-    var correctAnswer: Int
-    var image: PFFile?
-}*/
 
 class QuizHandler{
     var location: String
