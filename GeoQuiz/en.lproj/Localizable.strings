@@ -19,3 +19,6 @@ LOGIN_ERROR_MESSAGE = "Please check your credentials or use (Sign Up) to create 
 GEOCODING_ERROR = "Reverse geocoder failed with error";
 
 BADGE_NOT_ACHIEVED = "Not achieved yet";
+
+BADGE_UNLOCKED_TITLE = "Badge Unlocked";
+BADGE_UNLOCKED_MESSAGE = "You successfully unlocked the Badge for: ";

@@ -19,3 +19,6 @@ LOGIN_ERROR_MESSAGE = "Prüfen Sie ihre Angaben oder erstellen Sie einen neuen A
 GEOCODING_ERROR = "Reverse geocoder hat ein Problem festgestellt.";
 
 BADGE_NOT_ACHIEVED = "Noch nicht freigeschaltet";
+
+BADGE_UNLOCKED_TITLE = "Orden freigeschaltet";
+BADGE_UNLOCKED_MESSAGE = "Du hast erfolgreich einen Orden freigeschaltet: ";

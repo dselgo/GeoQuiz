@@ -281,14 +281,6 @@
                                     <constraint firstAttribute="height" constant="80" id="byV-B3-3Px"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mob-g5-93f">
-                                <rect key="frame" x="16" y="220" width="568" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Answer 1">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAU-9i-Q2l">
                                 <rect key="frame" x="447" y="566" width="137" height="26"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -310,6 +302,14 @@
                                 <rect key="frame" x="16" y="258" width="568" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Answer 2">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mob-g5-93f">
+                                <rect key="frame" x="16" y="220" width="568" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Answer 1">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -371,19 +371,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-eU-Dnc">
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-eU-Dnc">
                                 <rect key="frame" x="16" y="319" width="568" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="IFj-r6-zQW"/>
                                 </constraints>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNx-1z-Eys">
-                                <rect key="frame" x="16" y="347" width="64" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNx-1z-Eys">
+                                <rect key="frame" x="16" y="347" width="154" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.21464839338897601" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="1m8-b1-guR"/>
-                                    <constraint firstAttribute="width" constant="64" id="n2Q-TB-fLy"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="117" id="dg1-dF-ywg"/>
+                                    <constraint firstAttribute="width" constant="154" id="n2Q-TB-fLy"/>
                                 </constraints>
                                 <state key="normal" title="Try Again">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -391,13 +394,16 @@
                                     <segue destination="L9a-cn-OGw" kind="show" identifier="restartQuiz" id="8up-M9-6x1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-oE-PDo">
-                                <rect key="frame" x="507" y="347" width="77" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-oE-PDo">
+                                <rect key="frame" x="426" y="347" width="158" height="30"/>
+                                <color key="backgroundColor" red="0.0008313705192176668" green="0.19372773220487294" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="VfA-oU-ctk"/>
-                                    <constraint firstAttribute="width" constant="77" id="YsW-nC-geA"/>
+                                    <constraint firstAttribute="width" constant="158" id="YsW-nC-geA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="124" id="c7y-SH-4SF"/>
                                 </constraints>
                                 <state key="normal" title="Main Menu">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -405,44 +411,50 @@
                                     <segue destination="O80-d3-fXZ" kind="show" identifier="returnToMainMenu" id="F8r-Fi-dCF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhy-DO-6ud">
-                                <rect key="frame" x="239" y="385" width="122" height="30"/>
-                                <state key="normal" title="Post to Facebook">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="facebookButtonPushed:" destination="utb-jb-weZ" eventType="touchUpInside" id="coR-we-N7Z"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Questions Right: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66x-nY-LUA">
-                                <rect key="frame" x="151" y="290" width="299" height="21"/>
+                                <rect key="frame" x="16" y="290" width="568" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="299" id="dcC-eD-oRK"/>
+                                    <constraint firstAttribute="width" constant="568" id="dcC-eD-oRK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dcC-eD-oRK"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="NGO-oE-PDo" secondAttribute="trailing" id="05H-yL-aum"/>
                             <constraint firstItem="NGO-oE-PDo" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" symbolic="YES" id="1pB-Tg-QTv"/>
-                            <constraint firstAttribute="centerX" secondItem="vhy-DO-6ud" secondAttribute="centerX" id="31Y-Ed-6GO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ob3-eU-Dnc" secondAttribute="trailing" id="8zz-Fs-Rsq"/>
                             <constraint firstItem="ob3-eU-Dnc" firstAttribute="top" secondItem="66x-nY-LUA" secondAttribute="bottom" constant="8" symbolic="YES" id="ABC-gZ-AtX"/>
                             <constraint firstAttribute="centerX" secondItem="66x-nY-LUA" secondAttribute="centerX" id="AfT-yS-KJ9"/>
+                            <constraint firstItem="66x-nY-LUA" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="DtH-uh-k0k"/>
                             <constraint firstItem="cNx-1z-Eys" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" symbolic="YES" id="KRa-eC-Hxt"/>
                             <constraint firstAttribute="centerY" secondItem="66x-nY-LUA" secondAttribute="centerY" id="bfV-Y5-cSv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ob3-eU-Dnc" secondAttribute="trailing" id="cFJ-eJ-AD0"/>
-                            <constraint firstItem="vhy-DO-6ud" firstAttribute="top" secondItem="cNx-1z-Eys" secondAttribute="bottom" constant="8" symbolic="YES" id="irf-41-bLB"/>
+                            <constraint firstAttribute="centerY" secondItem="66x-nY-LUA" secondAttribute="centerY" id="m2C-NH-YYB"/>
                             <constraint firstItem="ob3-eU-Dnc" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="msi-XH-hd7"/>
+                            <constraint firstItem="66x-nY-LUA" firstAttribute="trailing" secondItem="P8d-ss-mBp" secondAttribute="trailingMargin" id="pvF-mT-Kzh"/>
                             <constraint firstItem="cNx-1z-Eys" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="zpG-AV-GDo"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="AfT-yS-KJ9"/>
+                                <exclude reference="bfV-Y5-cSv"/>
+                                <exclude reference="ABC-gZ-AtX"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
+                        <outlet property="mainMenuLabel" destination="NGO-oE-PDo" id="bZU-KP-PQW"/>
                         <outlet property="numCorrectLabel" destination="66x-nY-LUA" id="M76-DX-H7p"/>
                         <outlet property="numCorrectProgessBar" destination="ob3-eU-Dnc" id="iCN-Ik-HKG"/>
+                        <outlet property="tryAgainLabel" destination="cNx-1z-Eys" id="94B-9m-rfa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQ5-Gl-aLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -461,20 +473,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-7z-Th8">
-                                <rect key="frame" x="16" y="331" width="568" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="dP4-eK-GIe"/>
-                                </constraints>
-                                <state key="normal" title="Submit">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitQuestion:" destination="5JG-K8-JT2" eventType="touchUpInside" id="f2z-Q9-ANn"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please let us know why this question is being reported:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kjE-ga-TNA">
                                 <rect key="frame" x="16" y="64" width="568" height="60"/>
                                 <constraints>
@@ -493,6 +491,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifF-7z-Th8">
+                                <rect key="frame" x="16" y="331" width="568" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dP4-eK-GIe"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitQuestion:" destination="5JG-K8-JT2" eventType="touchUpInside" id="f2z-Q9-ANn"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>

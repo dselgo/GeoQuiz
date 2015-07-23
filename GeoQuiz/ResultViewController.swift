@@ -14,13 +14,30 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var numCorrectLabel: UILabel!
     @IBOutlet weak var numCorrectProgessBar: UIProgressView!
+    @IBOutlet weak var mainMenuLabel: UIButton!
+    @IBOutlet weak var tryAgainLabel: UIButton!
+    
+    let borderSize: CGFloat = 0.7
+    let borderWidth: CGFloat = 2.0
+    let cornerRadius: CGFloat = 5.0
+    let backGroundColor: UIColor = UIColor.blueColor()
     
     var numQuestions: Int!
     var numQuestionsCorrect: Int!
     var quizLocation: String!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainMenuLabel.layer.borderWidth = borderWidth
+        mainMenuLabel.layer.cornerRadius = cornerRadius
+        mainMenuLabel.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        mainMenuLabel.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        tryAgainLabel.layer.borderWidth = borderWidth
+        tryAgainLabel.layer.cornerRadius = cornerRadius
+        tryAgainLabel.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        tryAgainLabel.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        
         numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
         var percentage = Float(numQuestionsCorrect)/Float(numQuestions)
         numCorrectProgessBar.progress = percentage
@@ -31,6 +48,8 @@ class ResultViewController: UIViewController {
     func enableBadgeIfAllCorrect(){
         if numQuestionsCorrect == numQuestions {
             CityHandler.achieveBadge(city: quizLocation)
+            var alert: UIAlertView = UIAlertView(title: NSLocalizedString("BADGE_UNLOCKED_TITLE", comment: "Badge Unlocked"), message: NSLocalizedString("BADGE_UNLOCKED_MESSAGE", comment: "Badge Unlocked: ") + quizLocation, delegate: self, cancelButtonTitle: "OK")
+            alert.show()
         }
     }
 
@@ -43,21 +62,6 @@ class ResultViewController: UIViewController {
         
     }
     
-    @IBAction func facebookButtonPushed(sender: UIButton) {
-        /*
-        let photo : FBSDKSharePhoto = FBSDKSharePhoto()
-        
-        var query: PFQuery = PFQuery(className: "Cities")
-        var pfimage: PFObject?
-        query.whereKey("name", equalTo: location)
-        pfQuestion = query.findObjects()?.first as? PFObject
-        
-        photo.image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        photo.userGenerated = true
-        let content : FBSDKSharePhotoContent = FBSDKSharePhotoContent()
-        content.photos = [photo]
-        */
-    }
     
     @IBAction func tryAgainButtonPushed(sender: AnyObject) {
     }

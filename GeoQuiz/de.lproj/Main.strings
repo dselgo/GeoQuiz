@@ -1,4 +1,7 @@
 
+/* Class = "UILabel"; text = "Number of Questions Right: "; ObjectID = "66x-nY-LUA"; */
+"66x-nY-LUA.text" = "Anzahl richtiger Antworten: ";
+
 /* Class = "UILabel"; text = "Sound"; ObjectID = "8q0-7U-I2X"; */
 "8q0-7U-I2X.text" = "Audio";
 
@@ -14,11 +17,17 @@
 /* Class = "UIButton"; normalTitle = "Answer 4"; ObjectID = "KKe-2g-RLy"; */
 "KKe-2g-RLy.normalTitle" = "Antwort 4";
 
+/* Class = "UIButton"; normalTitle = "Main Menu"; ObjectID = "NGO-oE-PDo"; */
+"NGO-oE-PDo.normalTitle" = "Hauptmenü";
+
 /* Class = "UILabel"; text = "Notifications"; ObjectID = "O7r-BN-5Wl"; */
 "O7r-BN-5Wl.text" = "Benachrichtigungen";
 
 /* Class = "UIButton"; normalTitle = "Answer 2"; ObjectID = "Ohx-vr-Bn2"; */
 "Ohx-vr-Bn2.normalTitle" = "Antwort 2";
+
+/* Class = "UIButton"; normalTitle = "Try Again"; ObjectID = "cNx-1z-Eys"; */
+"cNx-1z-Eys.normalTitle" = "Erneut versuchen";
 
 /* Class = "UIButton"; normalTitle = "Options"; ObjectID = "fTc-Ov-hdI"; */
 "fTc-Ov-hdI.normalTitle" = "Optionen";
@@ -27,10 +36,7 @@
 "fWW-cM-G1C.normalTitle" = "Antwort 3";
 
 /* Class = "UIButton"; normalTitle = "Play"; ObjectID = "ftK-aV-IXj"; */
-"ftK-aV-IXj.normalTitle" = "Spiel starten";
-
-/* Class = "UILabel"; text = "Language"; ObjectID = "giH-aJ-1jB"; */
-"giH-aJ-1jB.text" = "Sprache";
+"ftK-aV-IXj.normalTitle" = "Spiel Starten";
 
 /* Class = "UILabel"; text = "Title"; ObjectID = "i33-jP-J2i"; */
 "i33-jP-J2i.text" = "Titel";
@@ -44,14 +50,14 @@
 /* Class = "UILabel"; text = "Please let us know why this question is being reported:"; ObjectID = "kjE-ga-TNA"; */
 "kjE-ga-TNA.text" = "Lassen Sie uns bitte wissen, warum Sie diese Frage melden:";
 
-/* Class = "UILabel"; text = "English"; ObjectID = "mLK-1o-0Lo"; */
-"mLK-1o-0Lo.text" = "English";
-
 /* Class = "UIButton"; normalTitle = "Answer 1"; ObjectID = "mob-g5-93f"; */
 "mob-g5-93f.normalTitle" = "Antwort 1";
 
 /* Class = "UIButton"; normalTitle = "Next"; ObjectID = "pwD-2A-guT"; */
 "pwD-2A-guT.normalTitle" = "Weiter";
+
+/* Class = "UIButton"; normalTitle = "Post to Facebook"; ObjectID = "vhy-DO-6ud"; */
+"vhy-DO-6ud.normalTitle" = "Auf Facebook teilen";
 
 /* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "ySN-gi-O5m"; */
 "ySN-gi-O5m.normalTitle" = "Ausloggen";
