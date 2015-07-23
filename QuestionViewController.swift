@@ -55,22 +55,25 @@ class QuestionViewController: UIViewController {
         answer1Button.layer.cornerRadius = cornerRadius
         answer1Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer1Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        answer1Button.backgroundColor = backGroundColor
         answer2Button.layer.borderWidth = borderWidth
         answer2Button.layer.cornerRadius = cornerRadius
         answer2Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer2Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        answer2Button.backgroundColor = backGroundColor
         answer3Button.layer.borderWidth = borderWidth
         answer3Button.layer.cornerRadius = cornerRadius
         answer3Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer3Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        answer3Button.backgroundColor = backGroundColor
         answer4Button.layer.borderWidth = borderWidth
         answer4Button.layer.cornerRadius = cornerRadius
         answer4Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer4Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        answer4Button.backgroundColor = backGroundColor
+        
+        nextButton.layer.borderWidth = borderWidth
+        nextButton.layer.cornerRadius = cornerRadius
+        nextButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
+        reportButton.layer.borderWidth = borderWidth
+        reportButton.layer.cornerRadius = cornerRadius
+        reportButton.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         
         self.questionText.editable = true
         self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 15)
