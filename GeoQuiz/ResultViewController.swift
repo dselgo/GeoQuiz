@@ -8,15 +8,19 @@
 
 import UIKit
 //import XYPieChart
-import Parse
 
 class ResultViewController: UIViewController {
     
     @IBOutlet weak var numCorrectLabel: UILabel!
     @IBOutlet weak var numCorrectProgessBar: UIProgressView!
-    var location: String = ""
+    
+    var numQuestions: Int!
+    var numQuestionsCorrect: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
+        numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
+        var percentage = Float(numQuestionsCorrect)/Float(numQuestions)
+        numCorrectProgessBar.progress = percentage
     }
 
     override func didReceiveMemoryWarning() {
