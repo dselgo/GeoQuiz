@@ -34,7 +34,8 @@ class QuizHandler{
         if questionCount == nil {
             self.questionCount = self.getQuestionCount()
         }
-        return questionNumber <= numberOfQuestions && questionNumber < questionCount!
+        
+        return questionNumber <= numberOfQuestions && questionNumber <= questionCount!
     }
     
     func getQuestionCount() -> Int {
