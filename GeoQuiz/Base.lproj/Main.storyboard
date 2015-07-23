@@ -42,15 +42,6 @@
                                     <segue destination="33w-7k-0ja" kind="show" identifier="showBadges" id="phd-dX-a4D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-aV-IXj">
-                                <rect key="frame" x="285" y="194" width="30" height="30"/>
-                                <state key="normal" title="Play">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="L9a-cn-OGw" kind="show" identifier="playQuiz" id="94w-gi-AnC"/>
-                                </connections>
-                            </button>
                             <searchBar contentMode="redraw" placeholder="Search City" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-hJ-J8Q">
                                 <rect key="frame" x="16" y="20" width="516" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -75,6 +66,15 @@
                                 </state>
                                 <connections>
                                     <segue destination="G7R-7t-pyq" kind="show" identifier="showOptions" id="ZLI-Aa-ClM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-aV-IXj">
+                                <rect key="frame" x="285" y="194" width="30" height="30"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="L9a-cn-OGw" kind="show" identifier="playQuiz" id="94w-gi-AnC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -193,13 +193,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1su-Xc-RJG">
-                                <rect key="frame" x="180" y="28" width="240" height="110"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBi-ua-ffB">
+                                <rect key="frame" x="16" y="28" width="100" height="33"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="EGM-Co-dEN"/>
-                                    <constraint firstAttribute="width" constant="240" id="l2J-fT-L8P"/>
+                                    <constraint firstAttribute="width" constant="100" id="Efn-wf-vWW"/>
+                                    <constraint firstAttribute="height" constant="33" id="gHW-9b-ZyL"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwD-2A-guT">
                                 <rect key="frame" x="16" y="562" width="32" height="30"/>
                                 <constraints>
@@ -213,16 +216,13 @@
                                     <action selector="nextQuestion:" destination="L9a-cn-OGw" eventType="touchUpInside" id="Scc-ZZ-AD9"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KBi-ua-ffB">
-                                <rect key="frame" x="16" y="28" width="100" height="33"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1su-Xc-RJG">
+                                <rect key="frame" x="180" y="28" width="240" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Efn-wf-vWW"/>
-                                    <constraint firstAttribute="height" constant="33" id="gHW-9b-ZyL"/>
+                                    <constraint firstAttribute="height" constant="110" id="EGM-Co-dEN"/>
+                                    <constraint firstAttribute="width" constant="240" id="l2J-fT-L8P"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -257,6 +257,7 @@
                         <outlet property="answer3Button" destination="fWW-cM-G1C" id="gtc-XB-jKn"/>
                         <outlet property="answer4Button" destination="KKe-2g-RLy" id="HXd-q7-I7g"/>
                         <outlet property="nextButton" destination="pwD-2A-guT" id="iYH-jI-s6V"/>
+                        <outlet property="questionImage" destination="1su-Xc-RJG" id="bqO-a0-eJc"/>
                         <outlet property="questionText" destination="IwB-LX-lLK" id="Zco-Hj-Ys6"/>
                         <outlet property="timerLabel" destination="KBi-ua-ffB" id="Hvo-0z-NWN"/>
                     </connections>
