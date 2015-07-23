@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftK-aV-IXj">
-                                <rect key="frame" x="16" y="232" width="568" height="35"/>
+                                <rect key="frame" x="16" y="276" width="568" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="myk-gG-GY1"/>
                                 </constraints>
@@ -58,11 +58,11 @@
                                 </connections>
                             </button>
                             <searchBar contentMode="redraw" placeholder="Search City" translatesAutoresizingMaskIntoConstraints="NO" id="zKa-hJ-J8Q">
-                                <rect key="frame" x="16" y="30" width="516" height="44"/>
+                                <rect key="frame" x="16" y="74" width="516" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k7t-Qs-twC">
-                                <rect key="frame" x="540" y="30" width="44" height="44"/>
+                                <rect key="frame" x="540" y="74" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="UPT-zy-0Kv"/>
                                     <constraint firstAttribute="height" constant="44" id="k6X-S8-7UC"/>
@@ -74,8 +74,20 @@
                                     <action selector="locationButtonPressed:" destination="O80-d3-fXZ" eventType="touchUpInside" id="0dF-Yx-LCN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTc-Ov-hdI">
+                                <rect key="frame" x="16" y="319" width="568" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="prl-5G-kLp"/>
+                                </constraints>
+                                <state key="normal" title="Options">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="G7R-7t-pyq" kind="show" identifier="showOptions" id="ZLI-Aa-ClM"/>
+                                </connections>
+                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5U6-1d-alb">
-                                <rect key="frame" x="16" y="87" width="568" height="137"/>
+                                <rect key="frame" x="16" y="131" width="568" height="137"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="137" id="IzJ-YY-0lU"/>
@@ -89,18 +101,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fTc-Ov-hdI">
-                                <rect key="frame" x="16" y="275" width="568" height="35"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="prl-5G-kLp"/>
-                                </constraints>
-                                <state key="normal" title="Options">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="G7R-7t-pyq" kind="show" identifier="showOptions" id="ZLI-Aa-ClM"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
