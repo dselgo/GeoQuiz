@@ -13,7 +13,6 @@ class ReportViewController: UIViewController {
     @IBOutlet weak var reportText: UITextView!
     @IBOutlet weak var submitButton: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }

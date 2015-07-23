@@ -48,12 +48,7 @@
 		AAF0186F1B5FEAFC006841A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0186C1B5FEAFC006841A7 /* FBSDKCoreKit.framework */; };
 		AAF018701B5FEAFC006841A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0186D1B5FEAFC006841A7 /* FBSDKLoginKit.framework */; };
 		AAF018711B5FEAFC006841A7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0186E1B5FEAFC006841A7 /* FBSDKShareKit.framework */; };
-		DC56E63D1B612A6300377458 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56E6321B612A6300377458 /* XYPieChart.m */; };
-		DC56E63E1B612A6300377458 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC56E6331B612A6300377458 /* Info.plist */; };
-		DC56E63F1B612A6300377458 /* XYPieChart.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = DC56E6341B612A6300377458 /* XYPieChart.modulemap */; };
-		DC56E6401B612A6300377458 /* XYPieChart.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC56E6351B612A6300377458 /* XYPieChart.xcconfig */; };
-		DC56E6411B612A6300377458 /* XYPieChart-Private.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC56E6361B612A6300377458 /* XYPieChart-Private.xcconfig */; };
-		DC56E6421B612A6300377458 /* XYPieChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56E6371B612A6300377458 /* XYPieChart-dummy.m */; };
+		F200297783DF9C3AFDF9549B /* Pods_GeoQuiz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB38CF7447E749A1B27CD2AB /* Pods_GeoQuiz.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +73,7 @@
 		3351A41F1B5EB1410054E71F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3351A4201B5EB1410054E71F /* GeoQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoQuizTests.swift; sourceTree = "<group>"; };
 		338C7EBE1B5EFA2600603081 /* BadgeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeTableViewController.swift; sourceTree = "<group>"; };
+		372F73D87C137E43D0037667 /* Pods-GeoQuiz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoQuiz.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeoQuiz/Pods-GeoQuiz.release.xcconfig"; sourceTree = "<group>"; };
 		A80672FD1B6014C1004A92ED /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		A8F4385D1B6121F000227BB0 /* ReportViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		AA01D8401B6069C9009A7309 /* CityHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHandler.swift; sourceTree = "<group>"; };
@@ -116,15 +112,8 @@
 		AAF0186D1B5FEAFC006841A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AAF0186E1B5FEAFC006841A7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		AAF018721B5FEBC0006841A7 /* GeoQuiz-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoQuiz-Bridging-Header.h"; sourceTree = "<group>"; };
-		DC56E6311B612A6300377458 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYPieChart.h; path = XYPieChart/XYPieChart.h; sourceTree = "<group>"; };
-		DC56E6321B612A6300377458 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYPieChart.m; path = XYPieChart/XYPieChart.m; sourceTree = "<group>"; };
-		DC56E6331B612A6300377458 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DC56E6341B612A6300377458 /* XYPieChart.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = XYPieChart.modulemap; sourceTree = "<group>"; };
-		DC56E6351B612A6300377458 /* XYPieChart.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = XYPieChart.xcconfig; sourceTree = "<group>"; };
-		DC56E6361B612A6300377458 /* XYPieChart-Private.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "XYPieChart-Private.xcconfig"; sourceTree = "<group>"; };
-		DC56E6371B612A6300377458 /* XYPieChart-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XYPieChart-dummy.m"; sourceTree = "<group>"; };
-		DC56E6381B612A6300377458 /* XYPieChart-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XYPieChart-prefix.pch"; sourceTree = "<group>"; };
-		DC56E6391B612A6300377458 /* XYPieChart-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XYPieChart-umbrella.h"; sourceTree = "<group>"; };
+		AB38CF7447E749A1B27CD2AB /* Pods_GeoQuiz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoQuiz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D780E6043D9F1BC85D603547 /* Pods-GeoQuiz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoQuiz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeoQuiz/Pods-GeoQuiz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +142,7 @@
 				AA236E851B5FE2B7004DF047 /* ParseUI.framework in Frameworks */,
 				AA236E841B5FE2B7004DF047 /* ParseFacebookUtilsV4.framework in Frameworks */,
 				AA236E831B5FE2B7004DF047 /* ParseFacebookUtils.framework in Frameworks */,
+				F200297783DF9C3AFDF9549B /* Pods_GeoQuiz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +162,8 @@
 				3351A4071B5EB1400054E71F /* GeoQuiz */,
 				3351A41D1B5EB1410054E71F /* GeoQuizTests */,
 				3351A4061B5EB1400054E71F /* Products */,
-				DC56E63C1B612A6300377458 /* Pods */,
+				4FE43269BFA02AA8C4BCE59C /* Pods */,
+				9DED1E9892B61B76E9B0FD9F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,6 +230,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		4FE43269BFA02AA8C4BCE59C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D780E6043D9F1BC85D603547 /* Pods-GeoQuiz.debug.xcconfig */,
+				372F73D87C137E43D0037667 /* Pods-GeoQuiz.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9DED1E9892B61B76E9B0FD9F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AB38CF7447E749A1B27CD2AB /* Pods_GeoQuiz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AA236E861B5FE2C3004DF047 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -267,39 +275,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DC56E63A1B612A6300377458 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DC56E6331B612A6300377458 /* Info.plist */,
-				DC56E6341B612A6300377458 /* XYPieChart.modulemap */,
-				DC56E6351B612A6300377458 /* XYPieChart.xcconfig */,
-				DC56E6361B612A6300377458 /* XYPieChart-Private.xcconfig */,
-				DC56E6371B612A6300377458 /* XYPieChart-dummy.m */,
-				DC56E6381B612A6300377458 /* XYPieChart-prefix.pch */,
-				DC56E6391B612A6300377458 /* XYPieChart-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/XYPieChart";
-			sourceTree = "<group>";
-		};
-		DC56E63B1B612A6300377458 /* XYPieChart */ = {
-			isa = PBXGroup;
-			children = (
-				DC56E6311B612A6300377458 /* XYPieChart.h */,
-				DC56E6321B612A6300377458 /* XYPieChart.m */,
-				DC56E63A1B612A6300377458 /* Support Files */,
-			);
-			path = XYPieChart;
-			sourceTree = "<group>";
-		};
-		DC56E63C1B612A6300377458 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				DC56E63B1B612A6300377458 /* XYPieChart */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -307,9 +282,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3351A4241B5EB1410054E71F /* Build configuration list for PBXNativeTarget "GeoQuiz" */;
 			buildPhases = (
+				7FF658FE0B4726539A13FAED /* Check Pods Manifest.lock */,
 				3351A4011B5EB1400054E71F /* Sources */,
 				3351A4021B5EB1400054E71F /* Frameworks */,
 				3351A4031B5EB1400054E71F /* Resources */,
+				3AB2B44817CEF4B32B6DCCF7 /* Embed Pods Frameworks */,
+				EDF5522DE8F213F1EBA9A135 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -383,9 +361,6 @@
 			files = (
 				AAC7344E1B6112740046EA05 /* Localizable.strings in Resources */,
 				3351A4101B5EB1410054E71F /* Main.storyboard in Resources */,
-				DC56E63E1B612A6300377458 /* Info.plist in Resources */,
-				DC56E6411B612A6300377458 /* XYPieChart-Private.xcconfig in Resources */,
-				DC56E6401B612A6300377458 /* XYPieChart.xcconfig in Resources */,
 				3351A4151B5EB1410054E71F /* LaunchScreen.xib in Resources */,
 				3351A4121B5EB1410054E71F /* Images.xcassets in Resources */,
 				AAA021EF1B6048830080D4FD /* XYPieChart in Resources */,
@@ -401,6 +376,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3AB2B44817CEF4B32B6DCCF7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeoQuiz/Pods-GeoQuiz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FF658FE0B4726539A13FAED /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EDF5522DE8F213F1EBA9A135 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeoQuiz/Pods-GeoQuiz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3351A4011B5EB1400054E71F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -409,12 +432,9 @@
 				AA02A25C1B602759004766B2 /* GeoLocation.swift in Sources */,
 				AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */,
 				AA5C1A661B60A30F0045C820 /* OrderedDictionary.swift in Sources */,
-				DC56E63D1B612A6300377458 /* XYPieChart.m in Sources */,
 				AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */,
 				AA01D8411B6069C9009A7309 /* CityHandler.swift in Sources */,
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
-				DC56E63F1B612A6300377458 /* XYPieChart.modulemap in Sources */,
-				DC56E6421B612A6300377458 /* XYPieChart-dummy.m in Sources */,
 				A8F4385E1B6121F000227BB0 /* ReportViewController.swift in Sources */,
 				AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */,
 				3351A40D1B5EB1410054E71F /* ViewController.swift in Sources */,
@@ -558,6 +578,7 @@
 		};
 		3351A4251B5EB1410054E71F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D780E6043D9F1BC85D603547 /* Pods-GeoQuiz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -575,6 +596,7 @@
 		};
 		3351A4261B5EB1410054E71F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 372F73D87C137E43D0037667 /* Pods-GeoQuiz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
