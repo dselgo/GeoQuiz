@@ -17,6 +17,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var badgesButton: UIButton!
     @IBOutlet weak var citySearchBar: UISearchBar!
     @IBOutlet weak var cityTableView: UITableView!
+    @IBOutlet weak var locationActivity: UIActivityIndicatorView!
+    @IBOutlet weak var locationButton: UIButton!
     
     let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
     let borderSize : CGFloat = 0.7
