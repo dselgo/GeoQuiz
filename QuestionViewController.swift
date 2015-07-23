@@ -34,6 +34,11 @@ class QuestionViewController: UIViewController {
     var question: Question! = nil
     var questionNumber: Int = 0
     
+    var correctSoundPath: NSURL! = nil
+    var correctSound: AVAudioPlayer! = nil
+    var wrongSoundPath: NSURL! = nil
+    var wrongSound: AVAudioPlayer! = nil
+    
     var quiz: QuizHandler! = nil
     
     override func viewDidLoad() {
@@ -57,6 +62,14 @@ class QuestionViewController: UIViewController {
 
         resetControls()
         quiz = QuizHandler(location: location, startQuestionID: 1)
+        
+        correctSoundPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundCorrect", ofType: "wav")!)
+        correctSound = AVAudioPlayer(contentsOfURL: correctSoundPath, error: nil)
+        correctSound.prepareToPlay()
+        
+        wrongSoundPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundWrong", ofType: "wav")!)
+        wrongSound = AVAudioPlayer(contentsOfURL: wrongSoundPath, error: nil)
+        wrongSound.prepareToPlay()
         
         loadQuestion()
     }
@@ -117,16 +130,16 @@ class QuestionViewController: UIViewController {
         timer.invalidate()
         if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
-            playSound(false)
+            wrongSound.play()
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
-            playSound(false)
+            wrongSound.play()
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
-            playSound(false)
+            wrongSound.play()
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
-            playSound(false)
+            wrongSound.play()
         }
         nextButton.enabled = true
     }
@@ -142,33 +155,33 @@ class QuestionViewController: UIViewController {
             answer1Button.backgroundColor = UIColor.greenColor()
             if(sender != answer1Button){
                 sender.backgroundColor = UIColor.redColor()
-                playSound(false)
+                wrongSound.play()
             } else {
-                playSound(true)
+                correctSound.play()
             }
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
             if(sender != answer2Button){
                 sender.backgroundColor = UIColor.redColor()
-                playSound(false)
+                wrongSound.play()
             } else {
-                playSound(true)
+                correctSound.play()
             }
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
             if(sender != answer3Button){
                 sender.backgroundColor = UIColor.redColor()
-                playSound(false)
+                wrongSound.play()
             } else {
-                playSound(true)
+                correctSound.play()
             }
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
             if(sender != answer4Button){
                 sender.backgroundColor = UIColor.redColor()
-                playSound(false)
+                wrongSound.play()
             } else {
-                playSound(true)
+                correctSound.play()
             }
         }
         nextButton.enabled = true
@@ -189,19 +202,6 @@ class QuestionViewController: UIViewController {
         } else {
             //segue into resultView
             performSegueWithIdentifier("showResults", sender: sender)
-        }
-    }
-    
-    func playSound(correct: Bool){
-        var audioPlayer = AVAudioPlayer()
-        if(correct){
-            var correctSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundCorrect", ofType: "wav")!)
-            audioPlayer = AVAudioPlayer(contentsOfURL: correctSound, error: nil)
-            audioPlayer.play()
-        } else {
-            var wrongSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundWrong", ofType: "wav")!)
-            audioPlayer = AVAudioPlayer(contentsOfURL: wrongSound, error: nil)
-            audioPlayer.play()
         }
     }
     
