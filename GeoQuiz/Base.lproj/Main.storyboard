@@ -441,6 +441,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="facebookShareButton" destination="vhy-DO-6ud" id="XSh-1K-I2M"/>
                         <outlet property="numCorrectLabel" destination="66x-nY-LUA" id="M76-DX-H7p"/>
                         <outlet property="numCorrectProgessBar" destination="ob3-eU-Dnc" id="iCN-Ik-HKG"/>
                     </connections>
