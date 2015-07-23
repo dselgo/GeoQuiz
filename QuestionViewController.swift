@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class QuestionViewController: UIViewController {
     @IBOutlet weak var answer1Button: UIButton!
@@ -56,6 +57,7 @@ class QuestionViewController: UIViewController {
 
         resetControls()
         quiz = QuizHandler(location: location, startQuestionID: 1)
+        
         loadQuestion()
     }
 
@@ -115,12 +117,16 @@ class QuestionViewController: UIViewController {
         timer.invalidate()
         if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
+            playSound(false)
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
+            playSound(false)
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
+            playSound(false)
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
+            playSound(false)
         }
         nextButton.enabled = true
     }
@@ -136,21 +142,33 @@ class QuestionViewController: UIViewController {
             answer1Button.backgroundColor = UIColor.greenColor()
             if(sender != answer1Button){
                 sender.backgroundColor = UIColor.redColor()
+                playSound(false)
+            } else {
+                playSound(true)
             }
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
             if(sender != answer2Button){
                 sender.backgroundColor = UIColor.redColor()
+                playSound(false)
+            } else {
+                playSound(true)
             }
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
             if(sender != answer3Button){
                 sender.backgroundColor = UIColor.redColor()
+                playSound(false)
+            } else {
+                playSound(true)
             }
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
             if(sender != answer4Button){
                 sender.backgroundColor = UIColor.redColor()
+                playSound(false)
+            } else {
+                playSound(true)
             }
         }
         nextButton.enabled = true
@@ -174,11 +192,24 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    func playSound(correct: Bool){
+        var audioPlayer = AVAudioPlayer()
+        if(correct){
+            var correctSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundCorrect", ofType: "wav")!)
+            audioPlayer = AVAudioPlayer(contentsOfURL: correctSound, error: nil)
+            audioPlayer.play()
+        } else {
+            var wrongSound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundWrong", ofType: "wav")!)
+            audioPlayer = AVAudioPlayer(contentsOfURL: wrongSound, error: nil)
+            audioPlayer.play()
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if reportButton == sender as! UIButton {
             var target: ReportViewController = segue.destinationViewController as! ReportViewController
             target.location = location
-            target.questionNumber = questionNumber
+            target.questionId = questionNumber - 1
         }
     }
 }
