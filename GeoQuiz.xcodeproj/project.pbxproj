@@ -48,6 +48,12 @@
 		AAF0186F1B5FEAFC006841A7 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0186C1B5FEAFC006841A7 /* FBSDKCoreKit.framework */; };
 		AAF018701B5FEAFC006841A7 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0186D1B5FEAFC006841A7 /* FBSDKLoginKit.framework */; };
 		AAF018711B5FEAFC006841A7 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAF0186E1B5FEAFC006841A7 /* FBSDKShareKit.framework */; };
+		DC56E63D1B612A6300377458 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56E6321B612A6300377458 /* XYPieChart.m */; };
+		DC56E63E1B612A6300377458 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC56E6331B612A6300377458 /* Info.plist */; };
+		DC56E63F1B612A6300377458 /* XYPieChart.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = DC56E6341B612A6300377458 /* XYPieChart.modulemap */; };
+		DC56E6401B612A6300377458 /* XYPieChart.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC56E6351B612A6300377458 /* XYPieChart.xcconfig */; };
+		DC56E6411B612A6300377458 /* XYPieChart-Private.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DC56E6361B612A6300377458 /* XYPieChart-Private.xcconfig */; };
+		DC56E6421B612A6300377458 /* XYPieChart-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC56E6371B612A6300377458 /* XYPieChart-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +116,15 @@
 		AAF0186D1B5FEAFC006841A7 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		AAF0186E1B5FEAFC006841A7 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		AAF018721B5FEBC0006841A7 /* GeoQuiz-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GeoQuiz-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC56E6311B612A6300377458 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYPieChart.h; path = XYPieChart/XYPieChart.h; sourceTree = "<group>"; };
+		DC56E6321B612A6300377458 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYPieChart.m; path = XYPieChart/XYPieChart.m; sourceTree = "<group>"; };
+		DC56E6331B612A6300377458 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC56E6341B612A6300377458 /* XYPieChart.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = XYPieChart.modulemap; sourceTree = "<group>"; };
+		DC56E6351B612A6300377458 /* XYPieChart.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = XYPieChart.xcconfig; sourceTree = "<group>"; };
+		DC56E6361B612A6300377458 /* XYPieChart-Private.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "XYPieChart-Private.xcconfig"; sourceTree = "<group>"; };
+		DC56E6371B612A6300377458 /* XYPieChart-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "XYPieChart-dummy.m"; sourceTree = "<group>"; };
+		DC56E6381B612A6300377458 /* XYPieChart-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XYPieChart-prefix.pch"; sourceTree = "<group>"; };
+		DC56E6391B612A6300377458 /* XYPieChart-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "XYPieChart-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +172,7 @@
 				3351A4071B5EB1400054E71F /* GeoQuiz */,
 				3351A41D1B5EB1410054E71F /* GeoQuizTests */,
 				3351A4061B5EB1400054E71F /* Products */,
+				DC56E63C1B612A6300377458 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -251,6 +267,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DC56E63A1B612A6300377458 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC56E6331B612A6300377458 /* Info.plist */,
+				DC56E6341B612A6300377458 /* XYPieChart.modulemap */,
+				DC56E6351B612A6300377458 /* XYPieChart.xcconfig */,
+				DC56E6361B612A6300377458 /* XYPieChart-Private.xcconfig */,
+				DC56E6371B612A6300377458 /* XYPieChart-dummy.m */,
+				DC56E6381B612A6300377458 /* XYPieChart-prefix.pch */,
+				DC56E6391B612A6300377458 /* XYPieChart-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/XYPieChart";
+			sourceTree = "<group>";
+		};
+		DC56E63B1B612A6300377458 /* XYPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				DC56E6311B612A6300377458 /* XYPieChart.h */,
+				DC56E6321B612A6300377458 /* XYPieChart.m */,
+				DC56E63A1B612A6300377458 /* Support Files */,
+			);
+			path = XYPieChart;
+			sourceTree = "<group>";
+		};
+		DC56E63C1B612A6300377458 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DC56E63B1B612A6300377458 /* XYPieChart */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -334,6 +383,9 @@
 			files = (
 				AAC7344E1B6112740046EA05 /* Localizable.strings in Resources */,
 				3351A4101B5EB1410054E71F /* Main.storyboard in Resources */,
+				DC56E63E1B612A6300377458 /* Info.plist in Resources */,
+				DC56E6411B612A6300377458 /* XYPieChart-Private.xcconfig in Resources */,
+				DC56E6401B612A6300377458 /* XYPieChart.xcconfig in Resources */,
 				3351A4151B5EB1410054E71F /* LaunchScreen.xib in Resources */,
 				3351A4121B5EB1410054E71F /* Images.xcassets in Resources */,
 				AAA021EF1B6048830080D4FD /* XYPieChart in Resources */,
@@ -357,9 +409,12 @@
 				AA02A25C1B602759004766B2 /* GeoLocation.swift in Sources */,
 				AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */,
 				AA5C1A661B60A30F0045C820 /* OrderedDictionary.swift in Sources */,
+				DC56E63D1B612A6300377458 /* XYPieChart.m in Sources */,
 				AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */,
 				AA01D8411B6069C9009A7309 /* CityHandler.swift in Sources */,
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
+				DC56E63F1B612A6300377458 /* XYPieChart.modulemap in Sources */,
+				DC56E6421B612A6300377458 /* XYPieChart-dummy.m in Sources */,
 				A8F4385E1B6121F000227BB0 /* ReportViewController.swift in Sources */,
 				AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */,
 				3351A40D1B5EB1410054E71F /* ViewController.swift in Sources */,

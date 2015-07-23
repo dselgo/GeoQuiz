@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import XYPieChart
 
 class ResultViewController: UIViewController, XYPieChartDelegate, XYPieChartDataSource {
     

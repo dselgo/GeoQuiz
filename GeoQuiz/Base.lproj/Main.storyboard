@@ -309,10 +309,10 @@
             </objects>
             <point key="canvasLocation" x="1797" y="437"/>
         </scene>
-        <!--View Controller-->
+        <!--Result View Controller-->
         <scene sceneID="8qG-rf-okp">
             <objects>
-                <viewController id="utb-jb-weZ" sceneMemberID="viewController">
+                <viewController id="utb-jb-weZ" customClass="ResultViewController" customModule="GeoQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f4w-O7-kqJ"/>
                         <viewControllerLayoutGuide type="bottom" id="7Ww-jk-hNs"/>
