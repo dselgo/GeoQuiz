@@ -9,13 +9,6 @@
 import Foundation
 import Parse
 
-/*struct QuizQuestion {
-    var text: String
-    var answers: (answer1: String, answer2: String, answer3: String, answer4: String)
-    var correctAnswer: Int
-    var image: PFFile?
-}*/
-
 class QuizHandler{
     var location: String
     var numberOfQuestions: Int
@@ -23,6 +16,13 @@ class QuizHandler{
     var questionId: Int64
     var questionCount: Int?
     
+    /**
+    * Initializes the QuizHandler which loads questions from Parse.com
+    *
+    * Params:
+    * location: Location for which questions should be loaded
+    * startQuestionId: question id of the first questiion
+    */
     init(location: String, startQuestionID: Int64){
         self.location = location.stringByReplacingOccurrencesOfString(" ", withString: "_") + "_" + NSLocalizedString("LANGUAGE_SHORTCUT", comment: "EN")
         self.numberOfQuestions = 10
@@ -30,6 +30,12 @@ class QuizHandler{
         self.questionNumber = 1
     }
     
+    /**
+    * Checks if one more question is available
+    *
+    * Return Value:
+    * True if there is a question available, otherwise false
+    */
     func nextQuestionAvailable() -> Bool {
         if questionCount == nil {
             self.questionCount = self.getQuestionCount()
@@ -38,6 +44,12 @@ class QuizHandler{
         return questionNumber <= numberOfQuestions && questionNumber <= questionCount!
     }
     
+    /**
+    * Returns the number of available Questions for the current Country
+    *
+    * Return Value:
+    * maximum question id
+    */
     func getQuestionCount() -> Int {
         var query: PFQuery = PFQuery(className: location)
         query.orderByDescending("questionId")
@@ -48,6 +60,15 @@ class QuizHandler{
         return (pfCount["questionId"] as! String).toInt()!
     }
     
+    /**
+    * Returns the next question in the question queue
+    *
+    * Params:
+    * imageHandler: Closure function which will retrieve the image
+    *
+    * Return Value:
+    * Question Object with the next question
+    */
     func getNextQuestion(imageHandler: (image: UIImage) -> Void) -> Question?{
         var question: Question?
         
@@ -63,6 +84,15 @@ class QuizHandler{
         return question
     }
     
+    /**
+    * Loads the Question with the given ID
+    *
+    * Params:
+    * id: Question to load
+    *
+    * Return Value:
+    * Question Object
+    */
     private func loadQuestion(id: Int64) -> Question? {
         var query: PFQuery = PFQuery(className: self.location)
         var pfQuestion: PFObject?
@@ -73,6 +103,16 @@ class QuizHandler{
         return self.parseQuestion(pfQuestion)
     }
     
+    /**
+    * Parses a Question object from Parse.com
+    * So it returns a Question Struct
+    *
+    * Params:
+    * pfQuestion: Parses the Parse.com question Object to a Question Struct
+    *
+    * Return Value:
+    * Question Object
+    */
     func parseQuestion(pfQuestion: PFObject?) -> Question? {
         var question: Question?
         
@@ -95,6 +135,12 @@ class QuizHandler{
         return question
     }
     
+    /**
+    * Loads the image of a question asynchronously and calls the closure function when it is finished
+    *
+    * Params:
+    * imageFile: ClosureFunction which retrieves the downloaded Image
+    */
     private func loadQuestionImage(imageFile: PFFile, imageHandler: (image: UIImage) -> Void) {
         imageFile.getDataInBackgroundWithBlock({ (imageData: NSData?, error: NSError?) -> Void in
             if error == nil {

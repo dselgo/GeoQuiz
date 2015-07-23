@@ -185,9 +185,9 @@
 			children = (
 				A80672FD1B6014C1004A92ED /* Question.swift */,
 				AA236E7A1B5FE278004DF047 /* QuizHandler.swift */,
+				AA01D8401B6069C9009A7309 /* CityHandler.swift */,
 				AAA021E41B6023D50080D4FD /* QuestionViewController.swift */,
 				AA5C1A651B60A30F0045C820 /* OrderedDictionary.swift */,
-				AA01D8401B6069C9009A7309 /* CityHandler.swift */,
 				AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */,
 				AA02A25B1B602759004766B2 /* GeoLocation.swift */,
 				3351A40A1B5EB1410054E71F /* AppDelegate.swift */,

@@ -63,6 +63,12 @@ class CityHandler{
         }
     }
     
+    /**
+    * Loads the Badge List from parse
+    *
+    * Params:
+    * finishHandler: will be called, when the loading process is finished
+    */
     private func loadBadgeList(finishHandler: () -> Void){
         var query: PFQuery = PFQuery(className: "Cities")
             query.whereKey("name", notEqualTo: "")
@@ -93,6 +99,16 @@ class CityHandler{
         }
     }
     
+    /**
+    * Loads a Badge Image from the Internet and caches it locally
+    *
+    * Params:
+    * name: Badge to load
+    * imageFile: Parse Image File which can be downloaded
+    *
+    * Return Value:
+    * Image Object
+    */
     private func loadAndSaveBadgeImage(var name: String, imageFile: PFFile) -> UIImage {
         name = name.stringByReplacingOccurrencesOfString(" ", withString: "_")
         
@@ -103,12 +119,27 @@ class CityHandler{
         return image
     }
     
+    /**
+    * Loads a cached Badge Image for a City
+    *
+    * Params:
+    * name: Badge to load
+    *
+    * Return Value:
+    * Image Object
+    */
     private func loadChachedBadge(var name: String) -> UIImage{
         name = name.stringByReplacingOccurrencesOfString(" ", withString: "_")
         
         return UIImage(data:self.defaults.valueForKey(name) as! NSData)!
     }
     
+    /**
+    * Returns the city badge list version, which is available online
+    *
+    * Return Value:
+    * online version
+    */
     private func getOnlineVersion() -> Int {
         var query: PFQuery = PFQuery(className: "Version")
         return query.getFirstObject()!["version"] as! Int
