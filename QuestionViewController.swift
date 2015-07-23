@@ -30,6 +30,7 @@ class QuestionViewController: UIViewController {
     let backGroundColor: UIColor = UIColor.blueColor()
     
     var timer = NSTimer()
+    let timeToAnswer = 30.0
     var counter: Double = 30.0
     let decrementTime: Double = 0.1
     
@@ -119,7 +120,7 @@ class QuestionViewController: UIViewController {
         answer2Button.enabled = true
         answer3Button.enabled = true
         answer4Button.enabled = true
-        counter = 10.0
+        counter = timeToAnswer
         
         dispatch_async(backgroundQueue, {
             self.question = self.quiz.getNextQuestion({ (image) -> Void in
