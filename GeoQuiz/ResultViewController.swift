@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 //import XYPieChart
 
 class ResultViewController: UIViewController {
@@ -16,11 +17,19 @@ class ResultViewController: UIViewController {
     
     var numQuestions: Int!
     var numQuestionsCorrect: Int!
+    var quizLocation: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
         var percentage = Float(numQuestionsCorrect)/Float(numQuestions)
         numCorrectProgessBar.progress = percentage
+    }
+
+    func enableBadgeIfAllCorrect(){
+        if numQuestionsCorrect == numQuestions {
+            CityHandler.achieveBadge(city: quizLocation)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +38,9 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func menuButtonPushed(sender: UIButton) {
+        
     }
+    
     @IBAction func facebookButtonPushed(sender: UIButton) {
         let photo : FBSDKSharePhoto = FBSDKSharePhoto()
         

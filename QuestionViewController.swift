@@ -45,6 +45,7 @@ class QuestionViewController: UIViewController {
     var wrongSoundPath: NSURL! = nil
     var wrongSound: AVAudioPlayer! = nil
     var soundsEnabled: Bool!
+    var quizLocation: String!
     
     
     
@@ -293,7 +294,7 @@ class QuestionViewController: UIViewController {
             var target = (segue.destinationViewController as! ResultViewController)
             target.numQuestionsCorrect = score
             target.numQuestions = questionTotal
-            target.location = location
+            target.quizLocation = self.quizLocation
         }
     }
 }
