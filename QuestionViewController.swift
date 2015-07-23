@@ -2,7 +2,9 @@
 //  QuestionViewController.swift
 //  GeoQuiz
 //
-//  Created by Deforation on 7/22/15.
+//  Controller class for the quiz view.
+//
+//  Created by Remo Schweizer and Danny Selgo on 7/22/15.
 //  Copyright (c) 2015 Team F. All rights reserved.
 //
 
@@ -42,6 +44,9 @@ class QuestionViewController: UIViewController {
     
     var quiz: QuizHandler! = nil
     
+    /**
+     * Load function that loads the view and then loads the first question
+     */
     override func viewDidLoad() {
         super.viewDidLoad()
         answer1Button.layer.borderWidth = 1.0
@@ -88,9 +93,12 @@ class QuestionViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
+    /**
+     * Gets the next question from the QuizHandler and then sets the question text to the text view, sets
+     * the answers text to the buttons, and starts the timer.
+     */
     func loadQuestion(){
         nextButton.enabled = false
         answer1Button.enabled = true
@@ -119,13 +127,18 @@ class QuestionViewController: UIViewController {
         })
     }
     
+    /**
+     * Begins the 10 second timer. Will fire an event every .1 seconds to update the timer label on the view
+     */
     func startTimer(){
         self.timer = NSTimer.scheduledTimerWithTimeInterval(decrementTime, target:self, selector: Selector("updateTimer"), userInfo: nil, repeats: true)
     }
     
+    /**
+     * Called every time the timer fires to update the timer label on the view to the value of counter
+     */
     func updateTimer(){
         counter -= decrementTime
-        //timerLabel.text = String(stringInterpolationSegment: counter)
         timerLabel.text = NSString(format: "%.1f", counter) as String
         if(counter <= 0){
             timerLabel.text = "0.0"
@@ -133,19 +146,10 @@ class QuestionViewController: UIViewController {
         }
     }
     
-    func playCorrectSong() {
-        if soundsEnabled! {
-            correctSound.play()
-        }
-    }
-    
-    func playWrongSong() {
-        if soundsEnabled! {
-            wrongSound.play()
-        }
-    }
-    
-    //stops the timer when it reached 0 and highlights the correct answer
+    /**
+     * Method to stop the timer and update the UI when the timer reaches 0.
+     * Plays a sound to notify that the user failed the question and highlights the correct answer in green.
+     */
     func stopTimer(){
         answer1Button.enabled = false
         answer2Button.enabled = false
@@ -154,21 +158,25 @@ class QuestionViewController: UIViewController {
         timer.invalidate()
         if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
-            playWrongSong()
+            playWrongSound()
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
-            playWrongSong()
+            playWrongSound()
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
-            playWrongSong()
+            playWrongSound()
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
-            playWrongSong()
+            playWrongSound()
         }
         nextButton.enabled = true
     }
     
-    //stops the timer and checks if the button pressed was correct
+    /**
+    * Method to stop the timer and update the UI when an answer button is pressed.
+    * Plays a sound to notify that the user either failed the question  or answered it correctly.
+    * Highlights the correct answer in green and the user selected answer in red if they answered incorrectly
+    */
     func stopTimer(sender: UIButton!){
         answer1Button.enabled = false
         answer2Button.enabled = false
@@ -179,38 +187,59 @@ class QuestionViewController: UIViewController {
             answer1Button.backgroundColor = UIColor.greenColor()
             if(sender != answer1Button){
                 sender.backgroundColor = UIColor.redColor()
-                playWrongSong()
+                playWrongSound()
             } else {
-                playCorrectSong()
+                playCorrectSound()
             }
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
             if(sender != answer2Button){
                 sender.backgroundColor = UIColor.redColor()
-                playWrongSong()
+                playWrongSound()
             } else {
-                playCorrectSong()
+                playCorrectSound()
             }
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
             if(sender != answer3Button){
                 sender.backgroundColor = UIColor.redColor()
-                playWrongSong()
+                playWrongSound()
             } else {
-                playCorrectSong()
+                playCorrectSound()
             }
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
             if(sender != answer4Button){
                 sender.backgroundColor = UIColor.redColor()
-                playWrongSong()
+                playWrongSound()
             } else {
-                playCorrectSong()
+                playCorrectSound()
             }
         }
         nextButton.enabled = true
     }
     
+    /**
+     * Plays a sound to notify the user that they answrred correctly
+     */
+    func playCorrectSound() {
+        if soundsEnabled! {
+            correctSound.play()
+        }
+    }
+    
+    /**
+    * Plays a sound to notify the user that they answrred incorrectly
+    */
+    func playWrongSound() {
+        if soundsEnabled! {
+            wrongSound.play()
+        }
+    }
+    
+    /**
+     * Resets the background color of the buttons and removes the image at the beginning of each question
+     */
     func resetControls(){
         answer1Button.backgroundColor = UIColor.clearColor()
         answer2Button.backgroundColor = UIColor.clearColor()
@@ -219,6 +248,9 @@ class QuestionViewController: UIViewController {
         questionImage.image = nil
     }
     
+    /**
+     * Loads the next question into the UI when the Next button is pressed or loads the results view if there are no more questions
+     */
     @IBAction func nextQuestion(sender: AnyObject) {
         if(quiz.nextQuestionAvailable()){
             loadQuestion()
@@ -229,6 +261,9 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    /**
+     * Segues to the report view to report a question
+     */
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if reportButton == sender as! UIButton {
             var target: ReportViewController = segue.destinationViewController as! ReportViewController

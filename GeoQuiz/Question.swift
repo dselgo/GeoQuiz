@@ -11,7 +11,9 @@
 import Foundation
 import Parse
 
-//struct for an answer, contains answer text and a bool value that states if it is the correct answer
+/**
+ * Structure representing an answer. Contains the answer text and a boolean valus to tell if it is the correct answer
+ */
 struct Answer{
     var text: String = ""
     var isCorrect: Bool = false
@@ -22,8 +24,10 @@ class Question {
     var answers: [Answer] = [Answer(), Answer(), Answer(), Answer()]
     var image: PFFile! = nil
     
-    //initializer method for Question class
-    //creates an array of 4 answers and sets one of them to true
+    /**
+     * Initializer method for Question class.
+     * Creates an array of 4 answers and sets one of them to true, then shuffles the array
+     */
     init(text: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int){
         self.text = text
         answers[0].text = answer1
@@ -45,15 +49,19 @@ class Question {
         answers = answers.shuffle()
     }
     
-    //convenience initializer method for questions with images
+    /** 
+     * Convenience initializer method for questions with images
+     */
     convenience init(text: String, answer1: String, answer2: String, answer3: String, answer4: String, correctAnswer: Int, image: PFFile){
         self.init(text: text, answer1: answer1, answer2: answer2, answer3: answer3, answer4: answer4, correctAnswer: correctAnswer)
         self.image = image
     }
 }
 
-//extension method to the Array class
-//allows shuffling of array elements so that the answers aren't in the same order each time
+/**
+ * Extension method to the Array class
+ * Allows shuffling of array elements so that the answers aren't in the same order each time
+ */
 extension Array {
     func shuffle() -> [T] {
         if count < 2 { return self }
