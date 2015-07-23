@@ -53,7 +53,11 @@ class QuestionViewController: UIViewController {
         answer4Button.layer.cornerRadius = cornerRadius
         answer4Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer4Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-
+        
+        self.questionText.editable = true
+        self.questionText.font = UIFont(name: self.questionText.font.fontName, size: 15)
+        self.questionText.editable = false
+        
         resetControls()
         quiz = QuizHandler(location: location, startQuestionID: 1)
         loadQuestion()
@@ -81,7 +85,7 @@ class QuestionViewController: UIViewController {
             
             dispatch_async(dispatch_get_main_queue()) {
                 self.questionText.text = self.question!.text
-
+                
                 self.answer1Button.setTitle(self.question.answers[0].text, forState: UIControlState.Normal)
                 self.answer2Button.setTitle(self.question.answers[1].text, forState: UIControlState.Normal)
                 self.answer3Button.setTitle(self.question.answers[2].text, forState: UIControlState.Normal)
