@@ -63,6 +63,8 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     * Otherwise, GeoQuiz's start screen will be presented
     */
     func initializeStartScreen() {
+        
+        println(PFUser.currentUser())
         if PFUser.currentUser() == nil {
             setUpLoginScreen()
         }
@@ -108,10 +110,13 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     }
     
     func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        println("sdfsfsdf")
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        println("testsetsetset")
+        
         if error != nil {
             var alert: UIAlertView = UIAlertView(title: error?.localizedDescription, message: "Please check your credentials or use (Sign Up) to create a new account", delegate: self, cancelButtonTitle: "OK")
             alert.show()
@@ -119,6 +124,8 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     }
 
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        println(PFUser.currentUser())
+        
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
