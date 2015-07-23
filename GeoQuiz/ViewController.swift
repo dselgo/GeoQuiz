@@ -132,7 +132,6 @@ class ViewController: UIViewController, PFLogInViewControllerDelegate, PFSignUpV
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if playButton == sender as! UIButton {
             var target: QuestionViewController = segue.destinationViewController as! QuestionViewController
-            println("works")
             target.location = citySearchBar!.text
         }
     }

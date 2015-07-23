@@ -19,16 +19,33 @@ class CityHandler{
     var cities: [city]
     var defaults: NSUserDefaults
     var onlineVersion: Int?
-    var localVersion: Int?
+    var localVersion: Int
     
     init(defaults: NSUserDefaults){
         self.cities = []
         self.defaults = defaults
+        localVersion = 3
+        //self.localVersion = defaults.objectForKey("cityListVersion") as! Int
     }
     
     func loadList() {
-        localVersion = defaults.objectForKey("cityListVersion") as! Int?
         onlineVersion = getOnlineVersion()
+        loadDataOnline(localVersion < onlineVersion)
+    }
+    
+    private func loadDataOnline(loadImagesLocally: Bool){
+        /*
+        var query: PFQuery = PFQuery(className: "Cities")
+        query.whereKey("name", notEqualTo: "")
+        query.findObjectsInBackgroundWithBlock { (objects: [AnyObject]?, error: NSError?) -> Void in
+            if objects != nil {
+                var pfObjects: [PFObject] = objects as! [PFObject]
+                for cityObject in pfObjects {
+                    self.cities += [cityObject["name"] as! String]
+                }
+            }
+        }
+        */
     }
     
     private func getOnlineVersion() -> Int {
