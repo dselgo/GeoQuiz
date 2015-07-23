@@ -319,11 +319,80 @@
                         <viewControllerLayoutGuide type="top" id="f4w-O7-kqJ"/>
                         <viewControllerLayoutGuide type="bottom" id="7Ww-jk-hNs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="P8d-ss-mBp">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="P8d-ss-mBp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ob3-eU-Dnc">
+                                <rect key="frame" x="16" y="319" width="568" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="IFj-r6-zQW"/>
+                                </constraints>
+                            </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNx-1z-Eys">
+                                <rect key="frame" x="16" y="347" width="64" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1m8-b1-guR"/>
+                                    <constraint firstAttribute="width" constant="64" id="n2Q-TB-fLy"/>
+                                </constraints>
+                                <state key="normal" title="Try Again">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tryAgainButtonPushed:" destination="utb-jb-weZ" eventType="touchUpInside" id="gji-gc-CJ3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NGO-oE-PDo">
+                                <rect key="frame" x="507" y="347" width="77" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="VfA-oU-ctk"/>
+                                    <constraint firstAttribute="width" constant="77" id="YsW-nC-geA"/>
+                                </constraints>
+                                <state key="normal" title="Main Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuButtonPushed:" destination="utb-jb-weZ" eventType="touchUpInside" id="KNv-3I-iCv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhy-DO-6ud">
+                                <rect key="frame" x="239" y="385" width="122" height="30"/>
+                                <state key="normal" title="Post to Facebook">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookButtonPushed:" destination="utb-jb-weZ" eventType="touchUpInside" id="coR-we-N7Z"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Questions Right: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66x-nY-LUA">
+                                <rect key="frame" x="151" y="290" width="299" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="dcC-eD-oRK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="NGO-oE-PDo" secondAttribute="trailing" id="05H-yL-aum"/>
+                            <constraint firstItem="NGO-oE-PDo" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" symbolic="YES" id="1pB-Tg-QTv"/>
+                            <constraint firstAttribute="centerX" secondItem="vhy-DO-6ud" secondAttribute="centerX" id="31Y-Ed-6GO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ob3-eU-Dnc" secondAttribute="trailing" id="8zz-Fs-Rsq"/>
+                            <constraint firstItem="ob3-eU-Dnc" firstAttribute="top" secondItem="66x-nY-LUA" secondAttribute="bottom" constant="8" symbolic="YES" id="ABC-gZ-AtX"/>
+                            <constraint firstAttribute="centerX" secondItem="66x-nY-LUA" secondAttribute="centerX" id="AfT-yS-KJ9"/>
+                            <constraint firstItem="cNx-1z-Eys" firstAttribute="top" secondItem="ob3-eU-Dnc" secondAttribute="bottom" constant="8" symbolic="YES" id="KRa-eC-Hxt"/>
+                            <constraint firstAttribute="centerY" secondItem="66x-nY-LUA" secondAttribute="centerY" id="bfV-Y5-cSv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ob3-eU-Dnc" secondAttribute="trailing" id="cFJ-eJ-AD0"/>
+                            <constraint firstItem="vhy-DO-6ud" firstAttribute="top" secondItem="cNx-1z-Eys" secondAttribute="bottom" constant="8" symbolic="YES" id="irf-41-bLB"/>
+                            <constraint firstItem="ob3-eU-Dnc" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="msi-XH-hd7"/>
+                            <constraint firstItem="cNx-1z-Eys" firstAttribute="leading" secondItem="P8d-ss-mBp" secondAttribute="leadingMargin" id="zpG-AV-GDo"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="numCorrectLabel" destination="66x-nY-LUA" id="M76-DX-H7p"/>
+                        <outlet property="numCorrectProgessBar" destination="ob3-eU-Dnc" id="iCN-Ik-HKG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vQ5-Gl-aLR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
