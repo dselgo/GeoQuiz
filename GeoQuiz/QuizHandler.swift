@@ -29,7 +29,7 @@ class QuizHandler{
         self.questionNumber = 1
     }
     
-    private func nextQuestionAvailable() -> Bool {
+    func nextQuestionAvailable() -> Bool {
         return questionNumber <= numberOfQuestions
     }
     
@@ -41,18 +41,6 @@ class QuizHandler{
             if question?.image != nil {
                 loadQuestionImage(question!.image!, imageHandler: imageHandler)
             }
-        }
-        ++questionId
-        ++questionNumber
-        
-        return question
-    }
-    
-    func getNextQuestion() -> Question?{
-        var question: Question?
-        
-        if nextQuestionAvailable() {
-            question = loadQuestion(questionId)
         }
         ++questionId
         ++questionNumber
