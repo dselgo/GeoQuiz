@@ -59,7 +59,7 @@ class CityHandler{
     * Params:
     * city: City which he achieved
     */
-    func achieveBadge(city name: String) {
+    static func achieveBadge(city name: String) {
         var query: PFQuery = PFQuery(className: "UserBadges")
         query.whereKey("city", equalTo: name)
         if query.findObjects()?.count <= 0{
@@ -67,9 +67,10 @@ class CityHandler{
             badge["username"] = PFUser.currentUser()!.username! as String
             badge["city"] = name
             badge.save()
-            
+            /*
             badgeCities = []
             loadBadgeStates()
+            */
         }
     }
     

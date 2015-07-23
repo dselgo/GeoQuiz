@@ -16,11 +16,20 @@ class ResultViewController: UIViewController {
     
     var numQuestions: Int!
     var numQuestionsCorrect: Int!
+    var quizLocation: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
         var percentage = numQuestionsCorrect/numQuestions
         numCorrectProgessBar.progress = Float(percentage)
+        
+    }
+    
+    func enableBadgeIfAllCorrect(){
+        if numQuestionsCorrect == numQuestions {
+            CityHandler.achieveBadge(city: quizLocation)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +38,9 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func menuButtonPushed(sender: UIButton) {
+        
     }
+    
     @IBAction func facebookButtonPushed(sender: UIButton) {
     }
     
