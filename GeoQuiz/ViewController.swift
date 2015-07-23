@@ -47,6 +47,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cityTableView.dataSource = self
         citySearchBar.delegate = self
         playButton.enabled = false
+        locationActivity.hidden = true
+        locationButton.hidden = false
         
         loadCityList()
     }
@@ -75,9 +77,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     @IBAction func locationButtonPressed(sender: UIButton) {
         self.view.endEditing(true)
+        self.startLocationActivityAnimation()
         dispatch_async(backgroundQueue, {
             self.searchCityAtCurrentLocation()
         })
+    }
+    
+    func startLocationActivityAnimation(){
+        locationActivity.hidden = false
+        locationButton.hidden = true
+        locationActivity.startAnimating()
+    }
+    
+    func stopLocationActivityAnimation(){
+        locationActivity.hidden = true
+        locationButton.hidden = false
+        locationActivity.stopAnimating()
     }
     
     func searchCityAtCurrentLocation(){
@@ -86,21 +101,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         if currentLocation != nil {
             var query: PFQuery = PFQuery(className: "Cities")
-            
             query.whereKey("location", nearGeoPoint: currentLocation!)
             
             var cityObject: PFObject? = query.findObjects()?.first as? PFObject
             
             dispatch_async(dispatch_get_main_queue()) {
+                self.stopLocationActivityAnimation()
                 self.citySearchBar.text = cityObject!["name"] as! String
                 self.searchBar(self.citySearchBar, textDidChange: self.citySearchBar.text)
             }
             
         } else {
-            
-            
-            var alert: UIAlertView = UIAlertView(title: NSLocalizedString("LOCATION_ERROR_TITLE", comment: "Location Error"), message: NSLocalizedString("LOCATION_ERROR_MESSAGE", comment: "Location Error"), delegate: self, cancelButtonTitle: "OK")
-            alert.show()
+            dispatch_async(dispatch_get_main_queue()) {
+                var alert: UIAlertView = UIAlertView(title: NSLocalizedString("LOCATION_ERROR_TITLE", comment: "Location Error"), message: NSLocalizedString("LOCATION_ERROR_MESSAGE", comment: "Location Error"), delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                self.stopLocationActivityAnimation()
+            }
         }
     }
  
