@@ -6,6 +6,8 @@
   Copyright (c) 2015 Team F. All rights reserved.
 */
 
+LANGUAGE_SHORTCUT = "DE";
+
 LOCATION_ERROR_TITLE = "Ortungsfehler";
 LOCATION_ERROR_MESSAGE = "Ihre aktuelle Poisition konnte nicht ermittelt werden. Versuchen Sie es bitte erneut.";
 
