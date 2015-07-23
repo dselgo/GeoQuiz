@@ -11,14 +11,19 @@ import Parse
 
 class OptionsTableViewController: UITableViewController {
 
+    @IBOutlet weak var switchSoundEnable: UISwitch!
+    var defaults: NSUserDefaults!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        defaults = NSUserDefaults()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        if let enabled: AnyObject = defaults.objectForKey("SoundEnabled") {
+            switchSoundEnable.on = enabled as! Bool
+        } else {
+            switchSoundEnable.on = true
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +47,11 @@ class OptionsTableViewController: UITableViewController {
 
     @IBAction func logoutClick(sender: AnyObject) {
         PFUser.logOut()
+    }
+    
+    @IBAction func soundEnableChange(sender: AnyObject) {
+        defaults.setBool(switchSoundEnable.on , forKey: "SoundEnabled")
+        defaults.synchronize()
     }
     
     /*override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

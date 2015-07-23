@@ -38,6 +38,7 @@ class QuestionViewController: UIViewController {
     var correctSound: AVAudioPlayer! = nil
     var wrongSoundPath: NSURL! = nil
     var wrongSound: AVAudioPlayer! = nil
+    var soundsEnabled: Bool!
     
     var quiz: QuizHandler! = nil
     
@@ -74,6 +75,13 @@ class QuestionViewController: UIViewController {
         wrongSoundPath = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("soundWrong", ofType: "wav")!)
         wrongSound = AVAudioPlayer(contentsOfURL: wrongSoundPath, error: nil)
         wrongSound.prepareToPlay()
+        
+        var defaults: NSUserDefaults = NSUserDefaults()
+        if let enabled: AnyObject = defaults.objectForKey("SoundEnabled") {
+            soundsEnabled = enabled as! Bool
+        } else {
+            soundsEnabled = true
+        }
         
         loadQuestion()
     }
@@ -125,6 +133,18 @@ class QuestionViewController: UIViewController {
         }
     }
     
+    func playCorrectSong() {
+        if soundsEnabled! {
+            correctSound.play()
+        }
+    }
+    
+    func playWrongSong() {
+        if soundsEnabled! {
+            wrongSound.play()
+        }
+    }
+    
     //stops the timer when it reached 0 and highlights the correct answer
     func stopTimer(){
         answer1Button.enabled = false
@@ -134,16 +154,16 @@ class QuestionViewController: UIViewController {
         timer.invalidate()
         if(question.answers[0].isCorrect){
             answer1Button.backgroundColor = UIColor.greenColor()
-            wrongSound.play()
+            playWrongSong()
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
-            wrongSound.play()
+            playWrongSong()
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
-            wrongSound.play()
+            playWrongSong()
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
-            wrongSound.play()
+            playWrongSong()
         }
         nextButton.enabled = true
     }
@@ -159,33 +179,33 @@ class QuestionViewController: UIViewController {
             answer1Button.backgroundColor = UIColor.greenColor()
             if(sender != answer1Button){
                 sender.backgroundColor = UIColor.redColor()
-                wrongSound.play()
+                playWrongSong()
             } else {
-                correctSound.play()
+                playCorrectSong()
             }
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
             if(sender != answer2Button){
                 sender.backgroundColor = UIColor.redColor()
-                wrongSound.play()
+                playWrongSong()
             } else {
-                correctSound.play()
+                playCorrectSong()
             }
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
             if(sender != answer3Button){
                 sender.backgroundColor = UIColor.redColor()
-                wrongSound.play()
+                playWrongSong()
             } else {
-                correctSound.play()
+                playCorrectSong()
             }
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
             if(sender != answer4Button){
                 sender.backgroundColor = UIColor.redColor()
-                wrongSound.play()
+                playWrongSong()
             } else {
-                correctSound.play()
+                playCorrectSong()
             }
         }
         nextButton.enabled = true
