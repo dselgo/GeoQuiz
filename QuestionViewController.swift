@@ -16,7 +16,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var questionText: UITextView!
     @IBOutlet weak var timerLabel: UILabel!
-
+    @IBOutlet weak var questionImage: UIImageView!
+    
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
     

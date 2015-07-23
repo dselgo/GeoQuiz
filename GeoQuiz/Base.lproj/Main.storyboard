@@ -182,12 +182,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mob-g5-93f">
-                                <rect key="frame" x="16" y="176" width="568" height="30"/>
-                                <state key="normal" title="Answer 1">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAU-9i-Q2l">
                                 <rect key="frame" x="511" y="566" width="73" height="26"/>
                                 <constraints>
@@ -227,6 +221,12 @@
                                     <constraint firstAttribute="height" constant="80" id="byV-B3-3Px"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mob-g5-93f">
+                                <rect key="frame" x="16" y="176" width="568" height="30"/>
+                                <state key="normal" title="Answer 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -261,6 +261,7 @@
                         <outlet property="answer3Button" destination="fWW-cM-G1C" id="gtc-XB-jKn"/>
                         <outlet property="answer4Button" destination="KKe-2g-RLy" id="HXd-q7-I7g"/>
                         <outlet property="nextButton" destination="pwD-2A-guT" id="tzS-XD-qF0"/>
+                        <outlet property="questionImage" destination="1su-Xc-RJG" id="I25-BB-Ddu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="evx-LA-bnv" userLabel="First Responder" sceneMemberID="firstResponder"/>
