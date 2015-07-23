@@ -291,6 +291,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         if playButton == sender as! UIButton {
             var target: QuestionViewController = segue.destinationViewController as! QuestionViewController
             target.location = selectedCity
+            target.quizLocation = selectedCity
         } else if badgesButton == sender as! UIButton {
             var target: BadgeTableViewController = segue.destinationViewController as! BadgeTableViewController
             target.cityHandler = cityHandler

@@ -17,7 +17,7 @@ class ResultViewController: UIViewController {
     
     var numQuestions: Int!
     var numQuestionsCorrect: Int!
-    var location: String
+    var quizLocation: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,25 +26,38 @@ class ResultViewController: UIViewController {
         numCorrectProgessBar.progress = percentage
     }
 
+    func enableBadgeIfAllCorrect(){
+        if numQuestionsCorrect == numQuestions {
+            CityHandler.achieveBadge(city: quizLocation)
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     @IBAction func menuButtonPushed(sender: UIButton) {
-    }
-    @IBAction func facebookButtonPushed(sender: UIButton) {
-        let photo : FBSDKSharePhoto = FBSDKSharePhoto()
         
+    }
+    
+    @IBAction func facebookButtonPushed(sender: UIButton) {
         var query: PFQuery = PFQuery(className: "Cities")
         var pfCity: PFObject?
-        query.whereKey("name", equalTo: location)
+        query.whereKey("name", equalTo: quizLocation)
         pfCity = query.findObjects()?.first as? PFObject
         
-        photo.image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        var pfBadge: PFFile = pfCity!["badge"] as! PFFile
+        //var badgeImage: UIImage = UIImage(data:pfBadge.getData()!)!
+        
+        let photo : FBSDKSharePhoto = FBSDKSharePhoto()
+        photo.image = UIImage(data:pfBadge.getData()!)!
         photo.userGenerated = true
         let content : FBSDKSharePhotoContent = FBSDKSharePhotoContent()
         content.photos = [photo]
+        FBSDKShareButton *button = [[FBSDKShareButton alloc] init]
+        button.shareContent = content
+        [self.view addSubview:button]
     }
     
     @IBAction func tryAgainButtonPushed(sender: AnyObject) {
