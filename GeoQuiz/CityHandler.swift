@@ -67,10 +67,6 @@ class CityHandler{
             badge["username"] = PFUser.currentUser()!.username! as String
             badge["city"] = name
             badge.save()
-            /*
-            badgeCities = []
-            loadBadgeStates()
-            */
         }
     }
     
@@ -87,6 +83,8 @@ class CityHandler{
         
         let objects: [AnyObject]? = query.findObjects()
         if objects != nil {
+            badgeCities = []
+            
             let badges: [PFObject] = objects as! [PFObject]
             for badge in badges {
                 badgeCities += [badge["city"] as! String]

@@ -24,6 +24,8 @@ class ResultViewController: UIViewController {
         numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
         var percentage = Float(numQuestionsCorrect)/Float(numQuestions)
         numCorrectProgessBar.progress = percentage
+        
+        enableBadgeIfAllCorrect()
     }
 
     func enableBadgeIfAllCorrect(){
@@ -42,6 +44,7 @@ class ResultViewController: UIViewController {
     }
     
     @IBAction func facebookButtonPushed(sender: UIButton) {
+        /*
         let photo : FBSDKSharePhoto = FBSDKSharePhoto()
         
         var query: PFQuery = PFQuery(className: "Cities")
@@ -53,6 +56,7 @@ class ResultViewController: UIViewController {
         photo.userGenerated = true
         let content : FBSDKSharePhotoContent = FBSDKSharePhotoContent()
         content.photos = [photo]
+        */
     }
     
     @IBAction func tryAgainButtonPushed(sender: AnyObject) {
