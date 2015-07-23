@@ -35,12 +35,16 @@ class QuestionViewController: UIViewController {
     
     var question: Question! = nil
     var questionNumber: Int = 0
+    var score: Int = 0
+    var questionTotal = 0
     
     var correctSoundPath: NSURL! = nil
     var correctSound: AVAudioPlayer! = nil
     var wrongSoundPath: NSURL! = nil
     var wrongSound: AVAudioPlayer! = nil
     var soundsEnabled: Bool!
+    
+    
     
     var quiz: QuizHandler! = nil
     
@@ -190,6 +194,7 @@ class QuestionViewController: UIViewController {
                 playWrongSound()
             } else {
                 playCorrectSound()
+                score++
             }
         } else if(question.answers[1].isCorrect){
             answer2Button.backgroundColor = UIColor.greenColor()
@@ -198,6 +203,7 @@ class QuestionViewController: UIViewController {
                 playWrongSound()
             } else {
                 playCorrectSound()
+                score++
             }
         } else if(question.answers[2].isCorrect){
             answer3Button.backgroundColor = UIColor.greenColor()
@@ -206,6 +212,7 @@ class QuestionViewController: UIViewController {
                 playWrongSound()
             } else {
                 playCorrectSound()
+                score++
             }
         } else {
             answer4Button.backgroundColor = UIColor.greenColor()
@@ -214,8 +221,10 @@ class QuestionViewController: UIViewController {
                 playWrongSound()
             } else {
                 playCorrectSound()
+                score++
             }
         }
+        questionTotal++
         nextButton.enabled = true
     }
     
@@ -269,6 +278,11 @@ class QuestionViewController: UIViewController {
             var target: ReportViewController = segue.destinationViewController as! ReportViewController
             target.location = location
             target.questionId = questionNumber - 1
+        }
+        if segue.identifier == "showResults"{
+            var yourNextViewController = (segue.destinationViewController as! ResultViewController)
+            yourNextViewController.numQuestionsCorrect = score
+            yourNextViewController.numQuestions = questionTotal
         }
     }
 }
