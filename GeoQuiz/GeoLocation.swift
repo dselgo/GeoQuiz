@@ -11,22 +11,23 @@ import CoreLocation
 import Parse
 
 class GeoLocation {
-    var locatioManager: CLLocationManager?
+    static var locatioManager: CLLocationManager?
     
     init(){
         self.initLocationManager()
     }
     
     private func initLocationManager(){
-        locatioManager = CLLocationManager()
-        locatioManager!.desiredAccuracy = kCLLocationAccuracyBest
-        locatioManager!.requestWhenInUseAuthorization()
-        locatioManager!.startUpdatingLocation()
+        GeoLocation.locatioManager = CLLocationManager()
+        GeoLocation.locatioManager!.desiredAccuracy = kCLLocationAccuracyBest
+        GeoLocation.locatioManager!.requestWhenInUseAuthorization()
     }
     
     func getLocation() -> CLLocation? {
-        initLocationManager()
-        return locatioManager!.location
+        GeoLocation.locatioManager!.startUpdatingLocation()
+        var location: CLLocation? = GeoLocation.locatioManager?.location
+        GeoLocation.locatioManager!.stopUpdatingLocation()
+        return location
     }
     
     func getLocation() -> PFGeoPoint? {

@@ -10,6 +10,8 @@ import UIKit
 
 class BadgeTableViewController: UITableViewController {
 
+    var cityHandler: CityHandler!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -36,20 +38,25 @@ class BadgeTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 5
+        return cityHandler.cities.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("BadgeCell", forIndexPath: indexPath) as! UITableViewCell
-
+        let city: String?
+        let image: UIImage?
         
-        cell.textLabel!.text = "City Badge"
+        if indexPath.row >= cityHandler.badgeCities.count {
+            city = "Not achieved yet"
+            image = UIImage(named: "questionmark")!
+        } else {
+            city = cityHandler.badgeCities[indexPath.row]
+            image = cityHandler.cities[city!]?.badge
+        }
         
-        var image : UIImage = UIImage(named: "badge")!
-        println("The loaded image: \(image)")
-        cell.imageView!.image = image
-        
+        cell.textLabel!.text = city!
+        cell.imageView!.image = image!
 
         return cell
     }

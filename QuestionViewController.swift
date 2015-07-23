@@ -18,6 +18,8 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     
+    let backgroundQueue = dispatch_get_global_queue(QOS_CLASS_BACKGROUND, 0)
+    
     let borderSize : CGFloat = 0.7
     let cornerRadius : CGFloat = 5.0
     
@@ -50,11 +52,10 @@ class QuestionViewController: UIViewController {
         answer4Button.layer.cornerRadius = cornerRadius
         answer4Button.layer.borderColor = UIColor(white: 0.0, alpha: borderSize).CGColor
         answer4Button.addTarget(self, action: "stopTimer:", forControlEvents: UIControlEvents.TouchDown)
-        if (location != ""){
-            quiz = QuizHandler(location: location, startQuestionID: 1)
-            loadQuestion()
-        }
 
+        resetControls()
+        quiz = QuizHandler(location: location, startQuestionID: 1)
+        loadQuestion()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,18 +70,24 @@ class QuestionViewController: UIViewController {
         answer3Button.enabled = true
         answer4Button.enabled = true
         counter = 10.0
-        question = quiz.getNextQuestion({ (image) -> Void in
-            self.questionImage.image = image
-        })!
-        questionNumber = quiz.questionNumber
-        questionText.text = question.text
         
-        answer1Button.setTitle(question.answers[0].text, forState: UIControlState.Normal)
-        answer2Button.setTitle(question.answers[1].text, forState: UIControlState.Normal)
-        answer3Button.setTitle(question.answers[2].text, forState: UIControlState.Normal)
-        answer4Button.setTitle(question.answers[3].text, forState: UIControlState.Normal)
+        dispatch_async(backgroundQueue, {
+            self.question = self.quiz.getNextQuestion({ (image) -> Void in
+                self.questionImage.image = image
+            })!
+            self.questionNumber = self.quiz.questionNumber
+            
+            dispatch_async(dispatch_get_main_queue()) {
+                self.questionText.text = self.question.text
+
+                self.answer1Button.setTitle(self.question.answers[0].text, forState: UIControlState.Normal)
+                self.answer2Button.setTitle(self.question.answers[1].text, forState: UIControlState.Normal)
+                self.answer3Button.setTitle(self.question.answers[2].text, forState: UIControlState.Normal)
+                self.answer4Button.setTitle(self.question.answers[3].text, forState: UIControlState.Normal)
         
-        startTimer()
+                self.startTimer()
+            }
+        })
     }
     
     func startTimer(){
@@ -147,14 +154,18 @@ class QuestionViewController: UIViewController {
         nextButton.enabled = true
     }
     
+    func resetControls(){
+        answer1Button.backgroundColor = UIColor.clearColor()
+        answer2Button.backgroundColor = UIColor.clearColor()
+        answer3Button.backgroundColor = UIColor.clearColor()
+        answer4Button.backgroundColor = UIColor.clearColor()
+        questionImage.image = nil
+    }
+    
     @IBAction func nextQuestion(sender: AnyObject) {
         if(quiz.nextQuestionAvailable()){
             loadQuestion()
-            answer1Button.backgroundColor = UIColor.clearColor()
-            answer2Button.backgroundColor = UIColor.clearColor()
-            answer3Button.backgroundColor = UIColor.clearColor()
-            answer4Button.backgroundColor = UIColor.clearColor()
-            questionImage.image = nil
+            resetControls()
         } else {
             //segue into resultView
         }

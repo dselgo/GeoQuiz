@@ -28,6 +28,7 @@
 		AA236E8C1B5FE2EC004DF047 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8B1B5FE2EC004DF047 /* libz.dylib */; };
 		AA236E8E1B5FE2F2004DF047 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8D1B5FE2F2004DF047 /* libsqlite3.dylib */; };
 		AA236E901B5FE300004DF047 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */; };
+		AA5C1A661B60A30F0045C820 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5C1A651B60A30F0045C820 /* OrderedDictionary.swift */; };
 		AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */; };
 		AAA021E31B6015ED0080D4FD /* OptionsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */; };
 		AAA021E51B6023D50080D4FD /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA021E41B6023D50080D4FD /* QuestionViewController.swift */; };
@@ -83,6 +84,7 @@
 		AA236E8B1B5FE2EC004DF047 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		AA236E8D1B5FE2F2004DF047 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		AA236E8F1B5FE300004DF047 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		AA5C1A651B60A30F0045C820 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderedDictionary.swift; sourceTree = "<group>"; };
 		AAA021E01B5FF30B0080D4FD /* OptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewController.swift; sourceTree = "<group>"; };
 		AAA021E21B6015ED0080D4FD /* OptionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTableViewCell.swift; sourceTree = "<group>"; };
 		AAA021E41B6023D50080D4FD /* QuestionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionViewController.swift; path = ../QuestionViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				A80672FD1B6014C1004A92ED /* Question.swift */,
 				AA236E7A1B5FE278004DF047 /* QuizHandler.swift */,
 				AAA021E41B6023D50080D4FD /* QuestionViewController.swift */,
+				AA5C1A651B60A30F0045C820 /* OrderedDictionary.swift */,
 				AA01D8401B6069C9009A7309 /* CityHandler.swift */,
 				AAA021EA1B6028650080D4FD /* LanguagesTableViewController.swift */,
 				AA02A25B1B602759004766B2 /* GeoLocation.swift */,
@@ -342,6 +345,7 @@
 			files = (
 				AA02A25C1B602759004766B2 /* GeoLocation.swift in Sources */,
 				AAA021E11B5FF30B0080D4FD /* OptionsTableViewController.swift in Sources */,
+				AA5C1A661B60A30F0045C820 /* OrderedDictionary.swift in Sources */,
 				AAA021EB1B6028650080D4FD /* LanguagesTableViewController.swift in Sources */,
 				AA01D8411B6069C9009A7309 /* CityHandler.swift in Sources */,
 				338C7EBF1B5EFA2600603081 /* BadgeTableViewController.swift in Sources */,
