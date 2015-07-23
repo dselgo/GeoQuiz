@@ -6,6 +6,8 @@
   Copyright (c) 2015 Team F. All rights reserved.
 */
 
+LANGUAGE_SHORTCUT = "EN";
+
 LOCATION_ERROR_TITLE = "Location error";
 LOCATION_ERROR_MESSAGE = "Could not detect your current position. Pleasy try again.";
 

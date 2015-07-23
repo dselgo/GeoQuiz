@@ -23,7 +23,7 @@ class QuizHandler{
     var questionId: Int64
     
     init(location: String, startQuestionID: Int64){
-        self.location = location.stringByReplacingOccurrencesOfString(" ", withString: "_")
+        self.location = location.stringByReplacingOccurrencesOfString(" ", withString: "_") + "_" + NSLocalizedString("LANGUAGE_SHORTCUT", comment: "EN")
         self.numberOfQuestions = 10
         self.questionId = startQuestionID
         self.questionNumber = 1
