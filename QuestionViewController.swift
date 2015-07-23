@@ -290,11 +290,9 @@ class QuestionViewController: UIViewController {
         }
 
         if segue.identifier == "showResults"{
-            /*
             var yourNextViewController = (segue.destinationViewController as! ResultViewController)
             yourNextViewController.numQuestionsCorrect = score
             yourNextViewController.numQuestions = questionTotal
-            */
         }
     }
 }
