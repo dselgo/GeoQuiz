@@ -21,11 +21,10 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         numCorrectLabel.text = "Number of Questions Right: \(numQuestionsCorrect)"
-        var percentage = numQuestionsCorrect/numQuestions
-        numCorrectProgessBar.progress = Float(percentage)
-        
+        var percentage = Float(numQuestionsCorrect)/Float(numQuestions)
+        numCorrectProgessBar.progress = percentage
     }
-    
+
     func enableBadgeIfAllCorrect(){
         if numQuestionsCorrect == numQuestions {
             CityHandler.achieveBadge(city: quizLocation)
